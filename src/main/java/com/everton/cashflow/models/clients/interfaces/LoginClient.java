@@ -6,5 +6,5 @@ import java.io.IOException;
 
 public interface LoginClient{
     boolean autenticacao(Usuario usuario) throws IOException;
-    boolean testarConexao(String urlBase);
+    boolean testarConexao(String urlBase) throws IOException;
 }

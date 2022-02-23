@@ -72,18 +72,15 @@ public class RequestResponse<T> {
         return response.isSuccessful();
     }
 
-    public boolean testeConexao(String urlBase){
+    public boolean testeConexao(String urlBase) throws IOException {
         Request request = new Request.Builder()
                 .url(urlBase)
                 .build();
 
         Call call = client.newCall(request);
         Response response = null;
-        try {
+
             response = call.execute();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
 
         return response.isSuccessful();
     }

@@ -1,5 +1,6 @@
 package com.everton.cashflow.controller;
 
+import animatefx.animation.FadeIn;
 import animatefx.animation.FadeOut;
 import com.everton.cashflow.models.constantes.Constantes;
 import com.everton.cashflow.models.entidades.Usuario;
@@ -12,6 +13,8 @@ import javafx.scene.control.*;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
+
+import java.io.IOException;
 
 public class LoginController {
 
@@ -51,7 +54,8 @@ public class LoginController {
     LoginService loginService = LoginService.getInstance();
 
     @FXML
-    private void fecharTela(MouseEvent evento){
+    private void fecharTela(ActionEvent evento){
+        (new FadeOut(this.root)).play();
         loginService.fecharTela(evento, paneConfig);
     }
 
@@ -60,10 +64,7 @@ public class LoginController {
         String login = ExtracaoDeDados.parseToString(txtUsuario);
         String senha = ExtracaoDeDados.parseToString(txtSenha);
 
-        Usuario usuario = Usuario.builder()
-                .login(login)
-                .senha(senha)
-                .build();
+        Usuario usuario = new Usuario(login, senha);
 
         boolean sucesso = false;
         sucesso = loginService.acessar(usuario);
@@ -76,6 +77,12 @@ public class LoginController {
     }
 
     @FXML
+    private void configuracao(MouseEvent evento) {
+        (new FadeIn(this.paneConfig)).play();
+        this.paneConfig.toFront();
+    }
+
+    @FXML
     private void salvarConfig(ActionEvent evento){
         String url = ExtracaoDeDados.parseToString(txtUrl);
         boolean sucesso = loginService.salvarConfig(Constantes.PROP_URL_BASE, url);
@@ -84,6 +91,8 @@ public class LoginController {
                 "Ocorreu um problema ao tentar salvar.",
                 Alert.AlertType.ERROR
         );
+        new FadeOut(paneConfig).play();
+        paneConfig.toBack();
     }
 
     @FXML
@@ -95,7 +104,22 @@ public class LoginController {
     @FXML
     private void testarConexao(ActionEvent evento){
         String urlBase = ExtracaoDeDados.parseToString(txtUrl);
-        loginService.testarConexao(urlBase);
+
+        try {
+            loginService.testarConexao(urlBase);
+        } catch (IOException e) {
+            Alerts.alertException(
+                    "Teste de conexão",
+                    "Erro ao tentar se conectar com o servidor",
+                    e.getMessage());
+            e.printStackTrace();
+        }
+        Alerts.alertaSimples(
+                "Teste de conexão",
+                "Conexão realizada com sucesso!",
+                Alert.AlertType.INFORMATION
+        );
+
     }
 }
 

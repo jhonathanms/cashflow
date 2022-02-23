@@ -3,10 +3,8 @@ package com.everton.cashflow.models.clients.implementacoes;
 import com.everton.cashflow.models.clients.interfaces.LoginClient;
 import com.everton.cashflow.models.constantes.Constantes;
 import com.everton.cashflow.models.entidades.Usuario;
-import com.everton.cashflow.models.services.LoginService;
 import com.everton.cashflow.util.ExtracaoDeDados;
 import com.everton.cashflow.util.RequestResponse;
-import lombok.extern.slf4j.Slf4j;
 
 import java.io.IOException;
 import java.util.HashMap;
@@ -14,7 +12,6 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.Properties;
 
-@Slf4j
 public class LoginClientImpl implements LoginClient {
 
     private static LoginClientImpl loginClient;
@@ -55,7 +52,7 @@ public class LoginClientImpl implements LoginClient {
     }
 
     @Override
-    public boolean testarConexao(String urlBase) {
+    public boolean testarConexao(String urlBase) throws IOException {
         return requisicao.testeConexao(urlBase);
     }
 

@@ -1,8 +1,8 @@
 package com.everton.cashflow.models.services;
 
+import javafx.event.Event;
 import javafx.scene.Node;
-import javafx.scene.input.InputEvent;
 
 public abstract class GenericService {
-    public abstract void fecharTela (InputEvent event, Node node);
+    public abstract void fecharTela(Event event, Node node);
 }

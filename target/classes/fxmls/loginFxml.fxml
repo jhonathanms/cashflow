@@ -49,7 +49,7 @@
                      <children>
                         <HBox alignment="CENTER" layoutX="-2.0" layoutY="339.0" prefHeight="39.0" prefWidth="339.0" spacing="20.0">
                            <children>
-                              <Button fx:id="btnSalvar" alignment="CENTER" graphicTextGap="5.0" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" onAction="#buttonEvent" prefHeight="42.0" prefWidth="126.0" styleClass="botao-acessar" stylesheets="@../styles/login.css" text="Salvar">
+                              <Button fx:id="btnSalvar" alignment="CENTER" graphicTextGap="5.0" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" onAction="#salvarConfig" prefHeight="42.0" prefWidth="126.0" styleClass="botao-acessar" stylesheets="@../styles/login.css" text="Salvar">
                                  <cursor>
                                     <Cursor fx:constant="HAND" />
                                  </cursor>
@@ -64,7 +64,7 @@
                                     </ImageView>
                                  </graphic>
                               </Button>
-                              <Button fx:id="btnCancelar" alignment="CENTER" graphicTextGap="5.0" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" onAction="#buttonEvent" prefHeight="22.0" prefWidth="126.0" style="-fx-background-color: #fff; -fx-text-fill: #747474; -fx-border-color: #747474;" styleClass="botao-acessar" stylesheets="@../styles/login.css" text="Cancelar" textFill="#747474">
+                              <Button fx:id="btnCancelar" alignment="CENTER" graphicTextGap="5.0" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" onAction="#cancelar" prefHeight="22.0" prefWidth="126.0" style="-fx-background-color: #fff; -fx-text-fill: #747474; -fx-border-color: #747474;" styleClass="botao-acessar" stylesheets="@../styles/login.css" text="Cancelar" textFill="#747474">
                                  <cursor>
                                     <Cursor fx:constant="HAND" />
                                  </cursor>
@@ -96,7 +96,7 @@
                               <Font name="System Bold" size="21.0" />
                            </font>
                         </Label>
-                        <Button fx:id="btnTestarConn" layoutX="184.0" layoutY="142.0" mnemonicParsing="false" onAction="#buttonEvent" prefHeight="31.0" prefWidth="139.0" styleClass="botao-acessar" stylesheets="@../styles/login.css" text="Testar conexão">
+                        <Button fx:id="btnTestarConn" layoutX="184.0" layoutY="142.0" mnemonicParsing="false" onAction="#testarConexao" prefHeight="31.0" prefWidth="139.0" styleClass="botao-acessar" stylesheets="@../styles/login.css" text="Testar conexão">
                            <cursor>
                               <Cursor fx:constant="HAND" />
                            </cursor>
@@ -127,7 +127,7 @@
                                     <Font size="16.0" />
                                  </font>
                               </PasswordField>
-                              <Button fx:id="btnAcessar" mnemonicParsing="false" onAction="#buttonEvent" prefHeight="41.0" prefWidth="247.0" styleClass="botao-acessar" text="Acessar">
+                              <Button fx:id="btnAcessar" mnemonicParsing="false" onAction="#acessar" prefHeight="41.0" prefWidth="247.0" styleClass="botao-acessar" text="Acessar">
                                  <cursor>
                                     <Cursor fx:constant="HAND" />
                                  </cursor>
@@ -142,16 +142,16 @@
                               <Font size="37.0" />
                            </font>
                         </Label>
-                        <Label fx:id="lblConfig" alignment="CENTER_RIGHT" layoutX="200.0" layoutY="360.0" onMouseClicked="#mouseEvent" prefHeight="19.0" prefWidth="104.0" styleClass="link" stylesheets="@../styles/login.css" text="Configuração" textAlignment="RIGHT" textFill="#434343">
+                        <Label fx:id="lblConfig" alignment="CENTER_RIGHT" layoutX="200.0" layoutY="367.0" onMouseClicked="#configuracao" prefHeight="19.0" prefWidth="104.0" styleClass="link" stylesheets="@../styles/login.css" text="Configuração" textAlignment="RIGHT" textFill="#434343">
                            <font>
                               <Font size="13.0" />
                            </font>
                         </Label>
-                        <Button fx:id="btnFechar" layoutX="298.0" layoutY="4.0" mnemonicParsing="false" onAction="#buttonEvent" styleClass="botao-fechar">
+                        <Button fx:id="btnFechar" layoutX="298.0" layoutY="4.0" mnemonicParsing="false" onAction="#fecharTela" styleClass="botao-fechar">
                            <graphic>
                               <ImageView fitHeight="19.0" fitWidth="17.0">
                                  <image>
-                                    <Image url="@../../../../../../Users/jhone/AppData/Local/Temp/icons8_Close_50px_1.png" />
+                                    <Image url="@../imagens/icons/icon_fechar.png" />
                                  </image>
                               </ImageView>
                            </graphic>

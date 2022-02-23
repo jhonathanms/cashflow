@@ -28,7 +28,7 @@ public class Alerts {
         alert.showAndWait();
     }
 
-    public static void alertException(String titulo, String cabecalho, String msg, String msgExcecao){
+    public static void alertException(String titulo, String msg, String msgExcecao){
         Alert alert = new Alert(Alert.AlertType.ERROR);
         alert.setTitle(titulo);
         alert.setHeaderText(null);

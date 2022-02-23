@@ -1,14 +1,12 @@
 package com.everton.cashflow.models.services;
 
 import animatefx.animation.FadeIn;
-import animatefx.animation.FadeOut;
 import com.everton.cashflow.models.clients.implementacoes.LoginClientImpl;
 import com.everton.cashflow.models.clients.interfaces.LoginClient;
+import com.everton.cashflow.models.constantes.Constantes;
 import com.everton.cashflow.models.entidades.Usuario;
-import javafx.event.ActionEvent;
-import javafx.fxml.FXML;
+import javafx.event.Event;
 import javafx.scene.Node;
-import javafx.scene.input.InputEvent;
 import lombok.SneakyThrows;
 
 import java.io.File;
@@ -34,9 +32,8 @@ public class LoginService extends GenericService{
     }
 
     @Override
-    public void fecharTela(InputEvent event, Node node) {
-        new FadeIn(node).play();
-        node.toFront();
+    public void fecharTela(Event event, Node node) {
+        System.exit(0);
     }
 
     public boolean acessar(Usuario usuario){
@@ -48,10 +45,12 @@ public class LoginService extends GenericService{
         }
     }
 
+    // http://localhost:8877/v1/configuracoes
     @SneakyThrows
     public boolean salvarConfig(String propriedade, String valor){
-        File file = new File(LoginService.class.
-                getResource("configuracao.properties").toString());
+        String path = LoginService.class.
+                getResource("/"+Constantes.CONFIG_PROPERTIES).toString();
+        File file = new File(path);
         Properties properties = new Properties();
 
         try (FileInputStream fis = new FileInputStream(file);
@@ -65,7 +64,7 @@ public class LoginService extends GenericService{
         }
     }
 
-    public void testarConexao(String urlBase){
+    public void testarConexao(String urlBase) throws IOException {
         loginClient.testarConexao(urlBase);
     }
 
