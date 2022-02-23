@@ -6,6 +6,11 @@ module com.everton.cashflow.cashflow {
     requires org.kordamp.bootstrapfx.core;
 
     requires AnimateFX;
+    requires com.fasterxml.jackson.databind;
+    requires com.fasterxml.jackson.core;
+    requires com.fasterxml.jackson.annotation;
+    requires okhttp3;
+    requires lombok;
 
     opens com.everton.cashflow to javafx.fxml;
     exports com.everton.cashflow;

@@ -1,7 +1,11 @@
 package com.everton.cashflow.controller;
 
-import animatefx.animation.FadeIn;
 import animatefx.animation.FadeOut;
+import com.everton.cashflow.models.constantes.Constantes;
+import com.everton.cashflow.models.entidades.Usuario;
+import com.everton.cashflow.models.services.LoginService;
+import com.everton.cashflow.util.Alerts;
+import com.everton.cashflow.util.ExtracaoDeDados;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
@@ -44,39 +48,54 @@ public class LoginController {
     @FXML
     private AnchorPane root;
 
+    LoginService loginService = LoginService.getInstance();
+
     @FXML
-    private void buttonEvent(ActionEvent evento){
-        if(evento.getSource() == btnFechar){
-            new FadeOut(root).play();
-            System.exit(0);
-        }
-
-        if(evento.getSource() == btnAcessar){
-
-        }
-
-        if(evento.getSource() == btnSalvar){
-            new FadeOut(paneConfig).play();
-            paneConfig.toBack();
-        }
-
-        if(evento.getSource() == btnCancelar){
-            new FadeOut(paneConfig).play();
-            paneConfig.toBack();
-        }
-
-        if(evento.getSource() == btnTestarConn){
-
-        }
+    private void fecharTela(MouseEvent evento){
+        loginService.fecharTela(evento, paneConfig);
     }
 
     @FXML
-    private void mouseEvent(MouseEvent evento){
-        if(evento.getSource() == lblConfig){
-            new FadeIn(paneConfig).play();
-            paneConfig.toFront();
-        }
+    private void acessar(ActionEvent evento){
+        String login = ExtracaoDeDados.parseToString(txtUsuario);
+        String senha = ExtracaoDeDados.parseToString(txtSenha);
+
+        Usuario usuario = Usuario.builder()
+                .login(login)
+                .senha(senha)
+                .build();
+
+        boolean sucesso = false;
+        sucesso = loginService.acessar(usuario);
+
+        if(!sucesso) Alerts.alertaSimples(
+                "Autenticação",
+                "Ops! Login e/ou senha incorreto",
+                Alert.AlertType.INFORMATION
+        );
     }
 
+    @FXML
+    private void salvarConfig(ActionEvent evento){
+        String url = ExtracaoDeDados.parseToString(txtUrl);
+        boolean sucesso = loginService.salvarConfig(Constantes.PROP_URL_BASE, url);
+        if(!sucesso) Alerts.alertaSimples(
+                "Configurações",
+                "Ocorreu um problema ao tentar salvar.",
+                Alert.AlertType.ERROR
+        );
+    }
+
+    @FXML
+    private void cancelar(ActionEvent evento){
+        new FadeOut(paneConfig).play();
+        paneConfig.toBack();
+    }
+
+    @FXML
+    private void testarConexao(ActionEvent evento){
+        String urlBase = ExtracaoDeDados.parseToString(txtUrl);
+        loginService.testarConexao(urlBase);
+    }
 }
 

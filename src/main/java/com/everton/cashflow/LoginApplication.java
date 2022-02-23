@@ -17,15 +17,16 @@ import java.io.IOException;
 public class LoginApplication extends Application {
 
     private Stage stage;
+
     @Override
     public void start(Stage stage) throws IOException {
         this.stage = stage;
-
         Parent root = FXMLLoader.load(LoginApplication.class.getResource("/fxmls/loginFxml.fxml"));
         new FadeIn(root).play();
         Scene scene = new Scene(root);
         configStage(stage, scene);
     }
+
     public static void main(String[] args) {
         launch();
     }

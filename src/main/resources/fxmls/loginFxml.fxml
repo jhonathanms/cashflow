@@ -142,7 +142,7 @@
                               <Font size="37.0" />
                            </font>
                         </Label>
-                        <Label fx:id="lblConfig" alignment="CENTER_RIGHT" layoutX="200.0" layoutY="360.0" onMouseClicked="#mouseEvent" prefHeight="19.0" prefWidth="104.0" styleClass="link" stylesheets="@../styles/login.css" text="Configuração" textAlignment="RIGHT" textFill="#434343">
+                        <Label fx:id="lblConfig" alignment="CENTER_RIGHT" layoutX="200.0" layoutY="360.0" onMouseClicked="#fecharTela" prefHeight="19.0" prefWidth="104.0" styleClass="link" stylesheets="@../styles/login.css" text="Configuração" textAlignment="RIGHT" textFill="#434343">
                            <font>
                               <Font size="13.0" />
                            </font>
