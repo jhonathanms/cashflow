@@ -48,14 +48,13 @@ public class LoginService extends GenericService{
     // http://localhost:8877/v1/configuracoes
     @SneakyThrows
     public boolean salvarConfig(String propriedade, String valor){
-        String path = LoginService.class.
-                getResource("/"+Constantes.CONFIG_PROPERTIES).toString();
-        File file = new File(path);
+        File file = new File(Constantes.CONFIG_PROPERTIES);
         Properties properties = new Properties();
 
         try (FileInputStream fis = new FileInputStream(file);
              FileOutputStream fos = new FileOutputStream(file)){
             properties.load(fis);
+            properties.setProperty(propriedade, valor);
             properties.store(fos, "Atualizado em:" + LocalDateTime.now());
             return true;
         }catch (IOException ex) {

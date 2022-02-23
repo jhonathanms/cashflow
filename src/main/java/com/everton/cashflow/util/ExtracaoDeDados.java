@@ -18,9 +18,7 @@ public class ExtracaoDeDados {
         try {
             Properties properties = new Properties();
             properties.load(
-                    new FileInputStream(
-                            ExtracaoDeDados.class
-                                    .getResource(Constantes.CONFIG_PROPERTIES).toString()));
+                    new FileInputStream(Constantes.CONFIG_PROPERTIES));
             return properties;
         } catch (IOException e) {
             e.printStackTrace();

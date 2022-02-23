@@ -9,12 +9,16 @@ import com.everton.cashflow.util.Alerts;
 import com.everton.cashflow.util.ExtracaoDeDados;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.CacheHint;
 import javafx.scene.control.*;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.Border;
 import javafx.scene.layout.Pane;
+import javafx.util.Duration;
 
 import java.io.IOException;
+import java.util.Objects;
 
 public class LoginController {
 
@@ -64,22 +68,42 @@ public class LoginController {
         String login = ExtracaoDeDados.parseToString(txtUsuario);
         String senha = ExtracaoDeDados.parseToString(txtSenha);
 
-        Usuario usuario = new Usuario(login, senha);
+        if(ehNuloOuVazio(login) || ehNuloOuVazio(senha)){
+            Alerts.alertaSimples(
+                    "Autenticação",
+                    "Login e/ou Senha não pode(m) ficar vazio(s)",
+                    Alert.AlertType.WARNING);
+            txtUsuario.requestFocus();
+        }else{
+            Usuario usuario = new Usuario(login, senha);
 
-        boolean sucesso = false;
-        sucesso = loginService.acessar(usuario);
+            boolean sucesso = false;
+            sucesso = loginService.acessar(usuario);
 
-        if(!sucesso) Alerts.alertaSimples(
-                "Autenticação",
-                "Ops! Login e/ou senha incorreto",
-                Alert.AlertType.INFORMATION
-        );
+            if(!sucesso) Alerts.alertaSimples(
+                    "Autenticação",
+                    "Ops! Login e/ou senha incorreto",
+                    Alert.AlertType.INFORMATION
+            );
+        }
     }
 
     @FXML
     private void configuracao(MouseEvent evento) {
         (new FadeIn(this.paneConfig)).play();
         this.paneConfig.toFront();
+        String urlBase = ExtracaoDeDados.obterPropriedades()
+                .getProperty(Constantes.PROP_URL_BASE);
+
+        if(ehNuloOuVazio(urlBase)){
+            txtUrl.requestFocus();
+        }else{
+            txtUrl.setText(urlBase);
+        }
+    }
+
+    private boolean ehNuloOuVazio(String str){
+        return Objects.isNull(str) || str.isEmpty();
     }
 
     @FXML
@@ -119,7 +143,6 @@ public class LoginController {
                 "Conexão realizada com sucesso!",
                 Alert.AlertType.INFORMATION
         );
-
     }
 }
 
