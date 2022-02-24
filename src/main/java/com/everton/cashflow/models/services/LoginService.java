@@ -45,7 +45,6 @@ public class LoginService extends GenericService{
         }
     }
 
-    // http://localhost:8877/v1/configuracoes
     @SneakyThrows
     public boolean salvarConfig(String propriedade, String valor){
         File file = new File(Constantes.CONFIG_PROPERTIES);
