@@ -9,8 +9,6 @@ k
 cashflow.iml,8\c\8ccef066fdd096f8ced241af533fee4554292b82
 €
 P.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_annotations_2_13_1.xml,3\3\335252d2ad2c65cd480ecc4b9bda21e7bd258930
-N
-src/main/java/module-info.java,1\c\1c89a5491fbfda3fb050196d6a239f20200296e7
 }
 M.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_databind_2_13_1.xml,e\9\e9edbb6d2e7eea4826e248c7253d0476a49bbf27
 y

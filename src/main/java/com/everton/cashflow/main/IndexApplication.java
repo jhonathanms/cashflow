@@ -6,32 +6,44 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
-import javafx.scene.layout.BorderPane;
-import javafx.scene.layout.Pane;
-import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
-import javafx.stage.StageStyle;
+import lombok.SneakyThrows;
 
 import java.io.IOException;
+import java.util.Objects;
 
 public class IndexApplication extends Application {
 
-    private Stage stage;
+    private static Stage stage;
+    private static IndexApplication indexApplication;
 
+    public static IndexApplication getInstance() {
+        if (Objects.nonNull(indexApplication)){
+            return indexApplication;
+        }
+        indexApplication = new IndexApplication();
+        return indexApplication;
+    }
+
+    public static Stage getStage() {
+        return stage;
+    }
+
+    @SneakyThrows
     @Override
-    public void start(Stage stage) throws IOException {
+    public void start(Stage stage){
         this.stage = stage;
-        Parent root = FXMLLoader.load(IndexApplication.class.getResource("/fxmls/loginFxml.fxml"));
+        Parent root = FXMLLoader.load(IndexApplication.class.getResource("/fxmls/login.fxml"));
         new FadeIn(root).play();
         Scene scene = new Scene(root);
-        configStage(stage, scene, root);
+        configStage(stage, scene);
     }
 
     public static void main(String[] args) {
         launch();
     }
 
-    private static void configStage(Stage stage, Scene scene, Parent root){
+    private static void configStage(Stage stage, Scene scene){
         stage.setTitle("Cashflow");
         stage.setScene(scene);
         stage.setMaximized(true);

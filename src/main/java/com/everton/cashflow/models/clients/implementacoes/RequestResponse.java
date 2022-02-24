@@ -1,4 +1,4 @@
-package com.everton.cashflow.util;
+package com.everton.cashflow.models.clients.implementacoes;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.core.type.TypeReference;

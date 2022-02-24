@@ -1,4 +1,4 @@
-package com.everton.cashflow;
+package com.everton.cashflow.main;
 
 import animatefx.animation.FadeIn;
 import javafx.application.Application;
@@ -13,15 +13,29 @@ import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
 import java.io.IOException;
+import java.util.Objects;
 
 public class LoginApplication extends Application {
 
-    private Stage stage;
+    private static Stage stage;
+    private static LoginApplication loginApplication;
+
+    public static LoginApplication getInstance() {
+        if (Objects.nonNull(loginApplication)){
+            return loginApplication;
+        }
+        loginApplication = new LoginApplication();
+        return loginApplication;
+    }
+
+    public static Stage getStage() {
+        return stage;
+    }
 
     @Override
     public void start(Stage stage) throws IOException {
         this.stage = stage;
-        Parent root = FXMLLoader.load(LoginApplication.class.getResource("/fxmls/loginFxml.fxml"));
+        Parent root = FXMLLoader.load(LoginApplication.class.getResource("/fxmls/login.fxml"));
         new FadeIn(root).play();
         Scene scene = new Scene(root);
         configStage(stage, scene, root);
@@ -34,7 +48,7 @@ public class LoginApplication extends Application {
 
     private static void configStage(Stage stage, Scene scene, Parent root){
         stage.setTitle("Login");
-        stage.initStyle(StageStyle.TRANSPARENT);
+        stage.initStyle(StageStyle.UNDECORATED);
         stage.setScene(scene);
         stage.setMaximized(false);
         stage.getIcons().add(new Image(LoginApplication.class.getResource("/imagens/icons/icon-titulo.png").toString()));

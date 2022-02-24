@@ -12,8 +12,8 @@ module com.everton.cashflow.cashflow {
     requires okhttp3;
     requires lombok;
 
-    opens com.everton.cashflow to javafx.fxml;
-    exports com.everton.cashflow;
     exports com.everton.cashflow.controller;
     opens com.everton.cashflow.controller to javafx.fxml;
+    exports com.everton.cashflow.main;
+    opens com.everton.cashflow.main to javafx.fxml;
 }

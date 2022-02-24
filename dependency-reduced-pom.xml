@@ -27,7 +27,7 @@
             <configuration>
               <transformers>
                 <transformer>
-                  <mainClass>com.everton.cashflow.LoginApplication</mainClass>
+                  <mainClass>com.everton.cashflow.main.LoginApplication</mainClass>
                 </transformer>
               </transformers>
             </configuration>
@@ -42,7 +42,7 @@
           <execution>
             <id>default-cli</id>
             <configuration>
-              <mainClass>com.everton.cashflow.LoginApplication</mainClass>
+              <mainClass>com.everton.cashflow.main.LoginApplication</mainClass>
               <launcher>app</launcher>
               <jlinkZipName>app</jlinkZipName>
               <jlinkImageName>app</jlinkImageName>

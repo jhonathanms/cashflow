@@ -4,7 +4,6 @@ import com.everton.cashflow.models.clients.interfaces.LoginClient;
 import com.everton.cashflow.models.constantes.Constantes;
 import com.everton.cashflow.models.entidades.Usuario;
 import com.everton.cashflow.util.ExtracaoDeDados;
-import com.everton.cashflow.util.RequestResponse;
 
 import java.io.IOException;
 import java.util.HashMap;

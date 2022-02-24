@@ -2,25 +2,27 @@ package com.everton.cashflow.controller;
 
 import animatefx.animation.FadeIn;
 import animatefx.animation.FadeOut;
+import com.everton.cashflow.main.IndexApplication;
+import com.everton.cashflow.main.LoginApplication;
 import com.everton.cashflow.models.constantes.Constantes;
-import com.everton.cashflow.models.entidades.Usuario;
 import com.everton.cashflow.models.services.LoginService;
 import com.everton.cashflow.util.Alerts;
 import com.everton.cashflow.util.ExtracaoDeDados;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.CacheHint;
+import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.Border;
 import javafx.scene.layout.Pane;
-import javafx.util.Duration;
+import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.net.URL;
 import java.util.Objects;
+import java.util.ResourceBundle;
 
-public class LoginController {
+public class LoginController implements Initializable {
 
     @FXML
     private Button btnAcessar;
@@ -55,7 +57,8 @@ public class LoginController {
     @FXML
     private AnchorPane root;
 
-    LoginService loginService = LoginService.getInstance();
+    private LoginService loginService = LoginService.getInstance();
+    private IndexApplication indexApplication = IndexApplication.getInstance();
 
     @FXML
     private void fecharTela(ActionEvent evento){
@@ -68,24 +71,27 @@ public class LoginController {
         String login = ExtracaoDeDados.parseToString(txtUsuario);
         String senha = ExtracaoDeDados.parseToString(txtSenha);
 
-        if(ehNuloOuVazio(login) || ehNuloOuVazio(senha)){
-            Alerts.alertaSimples(
-                    "Autenticação",
-                    "Login e/ou Senha não pode(m) ficar vazio(s)",
-                    Alert.AlertType.WARNING);
-            txtUsuario.requestFocus();
-        }else{
-            Usuario usuario = new Usuario(login, senha);
+        indexApplication.start(new Stage());
+        LoginApplication.getStage().close();
 
-            boolean sucesso = false;
-            sucesso = loginService.acessar(usuario);
-
-            if(!sucesso) Alerts.alertaSimples(
-                    "Autenticação",
-                    "Ops! Login e/ou senha incorreto",
-                    Alert.AlertType.INFORMATION
-            );
-        }
+//        if(ehNuloOuVazio(login) || ehNuloOuVazio(senha)){
+//            Alerts.alertaSimples(
+//                    "Autenticação",
+//                    "Login e/ou Senha não pode(m) ficar vazio(s)",
+//                    Alert.AlertType.WARNING);
+//            txtUsuario.requestFocus();
+//        }else{
+//            Usuario usuario = new Usuario(login, senha);
+//
+//            boolean sucesso = false;
+//            sucesso = loginService.acessar(usuario);
+//
+//            if(!sucesso) Alerts.alertaSimples(
+//                    "Autenticação",
+//                    "Ops! Login e/ou senha incorreto",
+//                    Alert.AlertType.INFORMATION
+//            );
+//        }
     }
 
     @FXML
@@ -144,5 +150,11 @@ public class LoginController {
                 Alert.AlertType.INFORMATION
         );
     }
+
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+
+    }
+
 }
 
