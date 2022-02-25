@@ -77,7 +77,6 @@ public class IndexController implements Initializable {
                 }else{
                     btn.setStyle("-fx-background-color:  #535353;" + "-fx-text-fill:#fff;");
                 }
-
             }
         });
     }
