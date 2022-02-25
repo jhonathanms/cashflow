@@ -51,7 +51,7 @@ public class LoginApplication extends Application {
         stage.initStyle(StageStyle.UNDECORATED);
         stage.setScene(scene);
         stage.setMaximized(false);
-        stage.getIcons().add(new Image(LoginApplication.class.getResource("/imagens/icons/icon-titulo.png").toString()));
+        stage.getIcons().add(new Image(LoginApplication.class.getResource("/imagens/icons/icone-logo.png").toString()));
         carregarPainelPrincipal(root);
         stage.show();
 

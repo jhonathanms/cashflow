@@ -33,7 +33,7 @@ public class IndexApplication extends Application {
     @Override
     public void start(Stage stage){
         this.stage = stage;
-        Parent root = FXMLLoader.load(IndexApplication.class.getResource("/fxmls/login.fxml"));
+        Parent root = FXMLLoader.load(IndexApplication.class.getResource("/fxmls/index.fxml"));
         new FadeIn(root).play();
         Scene scene = new Scene(root);
         configStage(stage, scene);

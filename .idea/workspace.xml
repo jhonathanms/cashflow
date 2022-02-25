@@ -4,7 +4,30 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="521a0dae-6c52-4c44-9437-1d97fc97d66d" name="Changes" comment="" />
+    <list default="true" id="521a0dae-6c52-4c44-9437-1d97fc97d66d" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/resources/imagens/icons/icone-logo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/imagens/icons/logo-icone.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/imagens/icons/menu-cadastro.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/imagens/icons/menu-exit.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/imagens/icons/menu-financeiro.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/imagens/icons/menu-hamburguer.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/imagens/icons/menu-home.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/imagens/icons/menu-venda.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/configuracao.properties" beforeDir="false" afterPath="$PROJECT_DIR$/configuracao.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/everton/cashflow/main/IndexApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/everton/cashflow/main/IndexApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/everton/cashflow/main/LoginApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/everton/cashflow/main/LoginApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/fxmls/index.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxmls/index.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/fxmls/login.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxmls/login.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/imagens/logo.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/imagens/logo.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/everton/cashflow/controller/LoginController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/imagens/icons/icon-titulo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/imagens/icons/refresh50px.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/imagens/logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/module-info.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/styles/login.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/styles/index.css" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -87,7 +110,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="SONARLINT_PRECOMMIT_ANALYSIS" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../backend-cashflow/ProjetoContasPagarReceber" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.3402299" />
@@ -95,8 +118,9 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\temp\cashflow\src\main\resources\fxmls" />
       <recent name="C:\temp\cashflow\src\main\resources\imagens\icons" />
+      <recent name="C:\temp\cashflow\src\main\resources\styles" />
+      <recent name="C:\temp\cashflow\src\main\resources\fxmls" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\temp\cashflow" />
