@@ -1,6 +1,7 @@
 package com.everton.cashflow.main;
 
 import animatefx.animation.FadeIn;
+import com.everton.cashflow.models.constantes.Constantes;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -35,7 +36,7 @@ public class LoginApplication extends Application {
     @Override
     public void start(Stage stage) throws IOException {
         this.stage = stage;
-        Parent root = FXMLLoader.load(LoginApplication.class.getResource("/fxmls/login.fxml"));
+        Parent root = FXMLLoader.load(LoginApplication.class.getResource(Constantes.CAMINHO_TELA_LOGIN));
         new FadeIn(root).play();
         Scene scene = new Scene(root);
         configStage(stage, scene, root);
@@ -51,7 +52,7 @@ public class LoginApplication extends Application {
         stage.initStyle(StageStyle.UNDECORATED);
         stage.setScene(scene);
         stage.setMaximized(false);
-        stage.getIcons().add(new Image(LoginApplication.class.getResource("/imagens/icons/icone-logo.png").toString()));
+        stage.getIcons().add(new Image(LoginApplication.class.getResource(Constantes.URL_LOGO_ICON).toString()));
         carregarPainelPrincipal(root);
         stage.show();
 

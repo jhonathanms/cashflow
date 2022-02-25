@@ -1,0 +1,9 @@
+.titulo{
+-fx-background-color: #3B6D7A;
+-fx-text-fill: #fff;
+-fx-padding: 10px;
+}
+
+.painel{
+-fx-background-color: #fff;
+}

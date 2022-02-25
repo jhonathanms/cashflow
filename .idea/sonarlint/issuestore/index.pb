@@ -27,8 +27,6 @@ v
 Fsrc/main/java/com/everton/cashflow/models/services/GenericService.java,3\5\35a3978e6af5d97f016a6560aa41849bbce38d56
 }
 Msrc/main/java/com/everton/cashflow/models/clients/interfaces/LoginClient.java,0\d\0dc776fadd53844184bdbc7a3541d3efff16d21c
-…
-Usrc/main/java/com/everton/cashflow/models/clients/implementacoes/LoginClientImpl.java,8\a\8a016f7bbd3a1ecd76f0367834fa4865e2384d0e
 N
 src/main/java/module-info.java,1\c\1c89a5491fbfda3fb050196d6a239f20200296e7
 J
@@ -37,3 +35,5 @@ J
 Usrc/main/java/com/everton/cashflow/models/clients/implementacoes/RequestResponse.java,a\f\af64c4a0db861db386528510a81417ae14b1797d
 7
 pom.xml,4\4\442292b8a7efeabbe4cc176709b833b1792140ec
+G
+configuracao.properties,c\b\cb99d6ca1353525206f4217ce952213dc013ace1

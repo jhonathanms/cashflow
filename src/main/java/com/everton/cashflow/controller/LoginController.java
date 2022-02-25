@@ -72,29 +72,31 @@ public class LoginController implements Initializable {
         String login = ExtracaoDeDados.parseToString(txtUsuario);
         String senha = ExtracaoDeDados.parseToString(txtSenha);
 
-        if(ehNuloOuVazio(login) || ehNuloOuVazio(senha)){
-            Alerts.alertaSimples(
-                    "Autenticação",
-                    "Login e/ou Senha não pode(m) ficar vazio(s)",
-                    Alert.AlertType.WARNING);
-            txtUsuario.requestFocus();
-        }else{
-            Usuario usuario = new Usuario(login, senha);
-            boolean sucesso = loginService.acessar(usuario);
-            if(sucesso) {
-                indexApplication.start(new Stage());
-                LoginApplication.getStage().close();
-            }else{
-                Alerts.alertaSimples(
-                        "Autenticação",
-                        "Ops! Login e/ou senha incorreto",
-                        Alert.AlertType.WARNING
-                );
-                txtUsuario.selectAll();
-                txtSenha.clear();
-                txtUsuario.requestFocus();
-            }
-        }
+//        if(ehNuloOuVazio(login) || ehNuloOuVazio(senha)){
+//            Alerts.alertaSimples(
+//                    "Autenticação",
+//                    "Login e/ou Senha não pode(m) ficar vazio(s)",
+//                    Alert.AlertType.WARNING);
+//            txtUsuario.requestFocus();
+//        }else{
+//            Usuario usuario = new Usuario(login, senha);
+//            boolean sucesso = loginService.acessar(usuario);
+//            if(sucesso) {
+//                indexApplication.start(new Stage());
+//                LoginApplication.getStage().close();
+//            }else{
+//                Alerts.alertaSimples(
+//                        "Autenticação",
+//                        "Ops! Login e/ou senha incorreto",
+//                        Alert.AlertType.WARNING
+//                );
+//                txtUsuario.selectAll();
+//                txtSenha.clear();
+//                txtUsuario.requestFocus();
+//            }
+//        }
+        indexApplication.start(new Stage());
+        LoginApplication.getStage().close();
     }
 
     @FXML

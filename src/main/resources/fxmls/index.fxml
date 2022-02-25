@@ -22,9 +22,9 @@
                         <Image url="@../imagens/logo.png" />
                      </image>
                   </ImageView>
-                  <VBox alignment="CENTER" layoutY="143.0" prefHeight="557.0" prefWidth="195.0" spacing="10.0">
+                  <VBox fx:id="grupoMenu" alignment="CENTER" layoutY="143.0" prefHeight="557.0" prefWidth="195.0" spacing="10.0">
                      <children>
-                        <Button contentDisplay="TOP" graphicTextGap="3.0" mnemonicParsing="false" prefHeight="85.0" prefWidth="195.0" style="-fx-background-color: #747474;;" styleClass="menu-button" text="Principal" textAlignment="CENTER">
+                        <Button fx:id="btnPrincipal" contentDisplay="TOP" graphicTextGap="3.0" mnemonicParsing="false" onAction="#abrirHome" prefHeight="85.0" prefWidth="195.0" styleClass="menu-button" text="Principal" textAlignment="CENTER">
                            <graphic>
                               <ImageView fitHeight="27.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
@@ -33,10 +33,10 @@
                               </ImageView>
                            </graphic>
                            <font>
-                              <Font size="18.0" />
+                              <Font size="15.0" />
                            </font>
                         </Button>
-                        <Button contentDisplay="TOP" graphicTextGap="3.0" layoutX="10.0" layoutY="204.0" mnemonicParsing="false" prefHeight="85.0" prefWidth="195.0" styleClass="menu-button" text="Movimento" textAlignment="CENTER">
+                        <Button fx:id="btnMovimento" contentDisplay="TOP" graphicTextGap="3.0" layoutX="10.0" layoutY="204.0" mnemonicParsing="false" onAction="#abrirMovimento" prefHeight="85.0" prefWidth="195.0" styleClass="menu-button" text="Movimento" textAlignment="CENTER">
                            <graphic>
                               <ImageView fitHeight="27.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
@@ -45,10 +45,10 @@
                               </ImageView>
                            </graphic>
                            <font>
-                              <Font size="18.0" />
+                              <Font size="15.0" />
                            </font>
                         </Button>
-                        <Button contentDisplay="TOP" graphicTextGap="3.0" layoutX="10.0" layoutY="266.0" mnemonicParsing="false" prefHeight="85.0" prefWidth="195.0" styleClass="menu-button" text="Financeiro" textAlignment="CENTER">
+                        <Button fx:id="btnFinanceiro" contentDisplay="TOP" graphicTextGap="3.0" layoutX="10.0" layoutY="266.0" mnemonicParsing="false" onAction="#abrirFinanceiro" prefHeight="85.0" prefWidth="195.0" styleClass="menu-button" text="Financeiro" textAlignment="CENTER">
                            <graphic>
                               <ImageView fitHeight="27.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
@@ -57,10 +57,10 @@
                               </ImageView>
                            </graphic>
                            <font>
-                              <Font size="18.0" />
+                              <Font size="15.0" />
                            </font>
                         </Button>
-                        <Button contentDisplay="TOP" graphicTextGap="3.0" layoutX="10.0" layoutY="312.0" mnemonicParsing="false" prefHeight="85.0" prefWidth="195.0" styleClass="menu-button" text="Cadastros" textAlignment="CENTER">
+                        <Button fx:id="btnCadastro" contentDisplay="TOP" graphicTextGap="3.0" layoutX="10.0" layoutY="312.0" mnemonicParsing="false" onAction="#abrirCadastro" prefHeight="85.0" prefWidth="195.0" styleClass="menu-button" text="Cadastros" textAlignment="CENTER">
                            <graphic>
                               <ImageView fitHeight="27.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
@@ -69,7 +69,7 @@
                               </ImageView>
                            </graphic>
                            <font>
-                              <Font size="18.0" />
+                              <Font size="15.0" />
                            </font>
                         </Button>
                         <Pane prefHeight="63.0" prefWidth="195.0" />
@@ -78,7 +78,7 @@
                               <Insets top="30.0" />
                            </VBox.margin>
                         </Separator>
-                        <Button graphicTextGap="10.0" mnemonicParsing="false" prefHeight="46.0" prefWidth="195.0" styleClass="menu-button" text="Sair" textAlignment="CENTER">
+                        <Button fx:id="btnSair" graphicTextGap="10.0" mnemonicParsing="false" onAction="#sair" prefHeight="46.0" prefWidth="195.0" styleClass="menu-button" text="Sair" textAlignment="CENTER">
                            <graphic>
                               <ImageView fitHeight="27.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
@@ -95,6 +95,9 @@
                </children>
             </AnchorPane>
          </left>
+         <center>
+            <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
+         </center>
       </BorderPane>
    </children>
 </AnchorPane>
