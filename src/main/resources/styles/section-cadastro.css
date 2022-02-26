@@ -1,0 +1,26 @@
+.botao-novo-cadastro{
+ -fx-background-color: #4B4B4B;
+ -fx-text-fill: #fff;
+  -fx-border-radius: 2px;
+}
+
+.botao-exportar-pdf{
+ -fx-background-color: #fff;
+ -fx-text-fill: #4B4B4B;
+ -fx-border-color: #dedede;
+ -fx-border-radius: 2px;
+}
+
+.botao-pesquisar-pdf{
+ -fx-background-color: #fff;
+ -fx-text-fill: #4B4B4B;
+ -fx-border-color: #dedede;
+ -fx-border-radius: 2px;
+}
+
+.txt-pesquisar{
+ -fx-background-color: #fff;
+ -fx-text-fill: #4B4B4B;
+ -fx-border-color: #dedede;
+ -fx-border-radius: 2px;
+}

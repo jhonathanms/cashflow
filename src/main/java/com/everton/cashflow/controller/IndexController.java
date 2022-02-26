@@ -43,7 +43,7 @@ public class IndexController implements Initializable {
     @FXML
     private void abrirHome(ActionEvent evento){
         carregarSubTela(Constantes.CAMINHO_TELA_SECTION_HOME);
-      selecionarMenuTelaAtiva(evento, btnPrincipal.getId());
+        selecionarMenuTelaAtiva(evento, btnPrincipal.getId());
     }
 
     @FXML

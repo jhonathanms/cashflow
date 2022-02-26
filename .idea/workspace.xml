@@ -5,46 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="521a0dae-6c52-4c44-9437-1d97fc97d66d" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/everton/cashflow/models/clients/implementacoes/ClienteClientImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/everton/cashflow/models/clients/implementacoes/ContaClientImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/everton/cashflow/models/clients/implementacoes/ContasPagarClientImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/everton/cashflow/models/clients/implementacoes/ContasReceberClientImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/everton/cashflow/models/clients/implementacoes/MovimentoClientImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/everton/cashflow/models/clients/implementacoes/ProdutoClientImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/everton/cashflow/models/clients/interfaces/ClienteClient.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/everton/cashflow/models/clients/interfaces/ContaClient.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/everton/cashflow/models/clients/interfaces/ContasPagarClient.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/everton/cashflow/models/clients/interfaces/ContasReceberClient.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/everton/cashflow/models/clients/interfaces/MovimentoClient.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/everton/cashflow/models/clients/interfaces/ProdutoClient.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/everton/cashflow/models/entidades/Cliente.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/everton/cashflow/models/entidades/Conta.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/everton/cashflow/models/entidades/ContasPagar.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/everton/cashflow/models/entidades/ContasReceber.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/everton/cashflow/models/entidades/Movimento.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/everton/cashflow/models/entidades/Produto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/everton/cashflow/models/enums/FormaDePagamento.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/everton/cashflow/models/enums/TipoConta.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/everton/cashflow/models/services/ClienteService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/everton/cashflow/models/services/ContaService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/everton/cashflow/models/services/ContasPagarService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/everton/cashflow/models/services/ContasReceberService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/everton/cashflow/models/services/MovimentoService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/everton/cashflow/models/services/ProdutoService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/everton/cashflow/util/ConversorUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/everton/cashflow/models/parsers/ClienteSimpleProperty.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/imagens/icons/pesquisar.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/styles/section-cadastro.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/everton/cashflow/controller/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/everton/cashflow/controller/LoginController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/everton/cashflow/models/clients/implementacoes/LoginClientImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/everton/cashflow/models/clients/implementacoes/LoginClientImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/everton/cashflow/models/clients/implementacoes/RequestResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/everton/cashflow/models/clients/implementacoes/RestTemplate.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/everton/cashflow/models/clients/interfaces/GenericClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/everton/cashflow/models/clients/interfaces/GenericClient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/everton/cashflow/models/clients/interfaces/LoginClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/everton/cashflow/models/clients/interfaces/LoginClient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/everton/cashflow/models/constantes/Constantes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/everton/cashflow/models/constantes/Constantes.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/everton/cashflow/models/entidades/UsuarioDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/everton/cashflow/models/dto/UsuarioDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/everton/cashflow/models/services/GenericService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/everton/cashflow/models/services/GenericService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/everton/cashflow/models/services/LoginService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/everton/cashflow/models/services/LoginService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/everton/cashflow/util/ExtracaoDeDados.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/everton/cashflow/util/ExtracaoDeDados.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/configuracao.properties" beforeDir="false" afterPath="$PROJECT_DIR$/configuracao.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/everton/cashflow/controller/CadastroController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/everton/cashflow/controller/CadastroController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/everton/cashflow/controller/IndexController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/everton/cashflow/controller/IndexController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/fxmls/section-cadastro.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxmls/section-cadastro.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/styles/login.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/styles/login.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -133,7 +103,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="SONARLINT_PRECOMMIT_ANALYSIS" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/java/com/everton/cashflow/models" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources/imagens/icons" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.3402299" />
@@ -141,11 +111,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\temp\cashflow\src\main\resources\imagens\icons" />
+      <recent name="C:\temp\cashflow\src\main\resources\styles" />
       <recent name="C:\temp\cashflow\src\main\java\com\everton\cashflow\models" />
       <recent name="C:\temp\cashflow\src\main\java\com\everton\cashflow\models\entidades" />
       <recent name="C:\temp\cashflow\src\main\resources\fxmls" />
-      <recent name="C:\temp\cashflow\src\main\resources\styles" />
-      <recent name="C:\temp\cashflow\src\main\resources\imagens\icons" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\temp\cashflow" />
@@ -154,11 +124,11 @@
       <recent name="C:\temp\cashflow\src\main\resources\fxml" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.everton.cashflow.models.parsers" />
       <recent name="com.everton.cashflow.models.services" />
       <recent name="com.everton.cashflow.controller" />
       <recent name="com.everton.cashflow.models.clients.implementacoes" />
       <recent name="com.everton.cashflow.models.clients.interfaces" />
-      <recent name="com.everton.cashflow.models.entidades" />
     </key>
   </component>
   <component name="RunManager">
@@ -232,7 +202,14 @@
       <option name="project" value="LOCAL" />
       <updated>1645821873537</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Implementado as controllers, models, serviços Client e as services para as classes ContasReceber, ContasPagar, Cliente, Conta, Produto e Movimento.">
+      <created>1645839660964</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1645839660965</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -242,6 +219,7 @@
     <MESSAGE value="Criado tela Index e menu lateral." />
     <MESSAGE value="Criado ação de menu e as sub-telas (movimento, financeiro e cadastro)." />
     <MESSAGE value="Criado branch develop." />
-    <option name="LAST_COMMIT_MESSAGE" value="Criado branch develop." />
+    <MESSAGE value="Implementado as controllers, models, serviços Client e as services para as classes ContasReceber, ContasPagar, Cliente, Conta, Produto e Movimento." />
+    <option name="LAST_COMMIT_MESSAGE" value="Implementado as controllers, models, serviços Client e as services para as classes ContasReceber, ContasPagar, Cliente, Conta, Produto e Movimento." />
   </component>
 </project>

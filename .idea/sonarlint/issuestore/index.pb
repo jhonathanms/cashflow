@@ -27,14 +27,10 @@ J
 Usrc/main/java/com/everton/cashflow/models/clients/implementacoes/RequestResponse.java,a\f\af64c4a0db861db386528510a81417ae14b1797d
 7
 pom.xml,4\4\442292b8a7efeabbe4cc176709b833b1792140ec
-G
-configuracao.properties,c\b\cb99d6ca1353525206f4217ce952213dc013ace1
 m
 =src/main/java/com/everton/cashflow/main/LoginApplication.java,4\4\44ccf22187c2cedda723359fa09a46ba081ea057
 w
 Gsrc/main/java/com/everton/cashflow/controller/FinanceiroController.java,a\2\a29969864ec54d00872d49bdd2e21d3515c14320
-u
-Esrc/main/java/com/everton/cashflow/controller/CadastroController.java,b\f\bf475a28adf9ca2c10498355e58a518983b541e6
 q
 Asrc/main/java/com/everton/cashflow/controller/HomeController.java,9\f\9ff0ddd6b185f04488f9c1ae0bbd8df758c25b82
 m
