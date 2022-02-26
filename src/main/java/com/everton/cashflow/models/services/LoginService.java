@@ -1,5 +1,7 @@
 package com.everton.cashflow.models.services;
 
+import com.everton.cashflow.models.clients.implementacoes.ContaClientImpl;
+import com.everton.cashflow.models.clients.implementacoes.LoginClientImpl;
 import com.everton.cashflow.models.clients.interfaces.LoginClient;
 import com.everton.cashflow.models.constantes.Constantes;
 import com.everton.cashflow.models.entidades.Usuario;
@@ -23,9 +25,13 @@ public class LoginService{
                 : new LoginService();
     }
 
+    public LoginService() {
+        this.loginClient = LoginClientImpl.getInstance();
+    }
+
     public boolean acessar(Usuario usuario){
         try {
-            return loginClient.getInstance().autenticacao(usuario);
+            return loginClient.autenticacao(usuario);
         } catch (IOException e) {
             e.printStackTrace();
             return false;
@@ -50,7 +56,7 @@ public class LoginService{
     }
 
     public void testarConexao(String urlBase) throws IOException {
-        loginClient.getInstance().testarConexao(urlBase);
+        loginClient.testarConexao(urlBase);
     }
 
 }

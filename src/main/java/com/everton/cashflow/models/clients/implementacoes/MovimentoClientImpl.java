@@ -24,8 +24,7 @@ public class MovimentoClientImpl implements MovimentoClient {
         this.conversorUtil = ConversorUtil.getInstance();
     }
 
-    @Override
-    public MovimentoClient getInstance(){
+    public static MovimentoClient getInstance(){
         return Objects.nonNull(movimentoClient)
                 ? movimentoClient
                 : new MovimentoClientImpl();
@@ -34,7 +33,7 @@ public class MovimentoClientImpl implements MovimentoClient {
     @Override
     public List<Movimento> listarTodos() {
         String json = restTemplate.get(urlBase.concat(Constantes.ENDPOINT_MOVIMENTO));
-        return conversorUtil.converterJsonEmListaEntidade(json);
+        return conversorUtil.converterJsonEmListaEntidade(json, Movimento.class);
     }
 
     @Override

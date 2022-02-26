@@ -1,7 +1,6 @@
 package com.everton.cashflow.models.entidades;
 
 import java.io.Serializable;
-import java.util.ArrayList;
 import java.util.List;
 
 
@@ -10,7 +9,7 @@ public class Cliente implements Serializable {
 
     private Long id;
     private String nomeCliente;
-    private List<Movimento> movimento = new ArrayList<>();
+    private List<Movimento> movimento;
 
     public Cliente() {
     }
@@ -44,4 +43,6 @@ public class Cliente implements Serializable {
     public void setMovimento(List<Movimento> movimento) {
         this.movimento = movimento;
     }
+
+
 }

@@ -5,6 +5,7 @@ import animatefx.animation.FadeOut;
 import com.everton.cashflow.main.IndexApplication;
 import com.everton.cashflow.main.LoginApplication;
 import com.everton.cashflow.models.constantes.Constantes;
+import com.everton.cashflow.models.entidades.Usuario;
 import com.everton.cashflow.models.services.LoginService;
 import com.everton.cashflow.util.Alerts;
 import com.everton.cashflow.util.ExtracaoDeDados;
@@ -61,7 +62,7 @@ public class LoginController implements Initializable {
     @FXML
     private void fecharTela(){
         (new FadeOut(this.root)).play();
-            System.exit(0);
+        System.exit(0);
     }
 
     @FXML
@@ -69,31 +70,31 @@ public class LoginController implements Initializable {
         String login = ExtracaoDeDados.parseToString(txtUsuario);
         String senha = ExtracaoDeDados.parseToString(txtSenha);
 
-//        if(ehNuloOuVazio(login) || ehNuloOuVazio(senha)){
-//            Alerts.alertaSimples(
-//                    "Autenticação",
-//                    "Login e/ou Senha não pode(m) ficar vazio(s)",
-//                    Alert.AlertType.WARNING);
-//            txtUsuario.requestFocus();
-//        }else{
-//            Usuario usuario = new Usuario(login, senha);
-//            boolean sucesso = loginService.acessar(usuario);
-//            if(sucesso) {
-//                indexApplication.start(new Stage());
-//                LoginApplication.getStage().close();
-//            }else{
-//                Alerts.alertaSimples(
-//                        "Autenticação",
-//                        "Ops! Login e/ou senha incorreto",
-//                        Alert.AlertType.WARNING
-//                );
-//                txtUsuario.selectAll();
-//                txtSenha.clear();
-//                txtUsuario.requestFocus();
-//            }
-//        }
-        indexApplication.start(new Stage());
-        LoginApplication.getStage().close();
+        if(ehNuloOuVazio(login) || ehNuloOuVazio(senha)){
+            Alerts.alertaSimples(
+                    "Autenticação",
+                    "Login e/ou Senha não pode(m) ficar vazio(s)",
+                    Alert.AlertType.WARNING);
+            txtUsuario.requestFocus();
+        }else{
+            Usuario usuario = new Usuario(login, senha);
+            boolean sucesso = loginService.acessar(usuario);
+            if(sucesso) {
+                indexApplication.start(new Stage());
+                LoginApplication.getStage().close();
+            }else{
+                Alerts.alertaSimples(
+                        "Autenticação",
+                        "Ops! Login e/ou senha incorreto",
+                        Alert.AlertType.WARNING
+                );
+                txtUsuario.selectAll();
+                txtSenha.clear();
+                txtUsuario.requestFocus();
+            }
+        }
+//        indexApplication.start(new Stage());
+//        LoginApplication.getStage().close();
     }
 
     @FXML

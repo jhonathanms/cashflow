@@ -18,8 +18,7 @@ public class ContaClientImpl implements ContaClient {
     private String urlBase;
     private ConversorUtil<Conta> conversorUtil;
 
-    @Override
-    public ContaClient getInstance(){
+    public static ContaClient getInstance(){
         return Objects.nonNull(contaClient)
                 ? contaClient
                 : new ContaClientImpl();
@@ -33,13 +32,13 @@ public class ContaClientImpl implements ContaClient {
 
     @Override
     public List<Conta> listarTodos() {
-        String json = restTemplate.get(urlBase.concat(Constantes.ENDPOINT_MOVIMENTO));
-        return conversorUtil.converterJsonEmListaEntidade(json);
+        String json = restTemplate.get(urlBase.concat(Constantes.ENDPOINT_CONTA));
+        return conversorUtil.converterJsonEmListaEntidade(json, Conta.class);
     }
 
     @Override
     public Conta buscarPorId(Long id) {
-        String json = restTemplate.getById(urlBase.concat(Constantes.ENDPOINT_MOVIMENTO), id);
+        String json = restTemplate.getById(urlBase.concat(Constantes.ENDPOINT_CONTA), id);
         return conversorUtil.converterJsonEmEntidade(json, Conta.class);
     }
 
@@ -47,7 +46,7 @@ public class ContaClientImpl implements ContaClient {
     public boolean cadastrar(Conta movimento) {
         String json = conversorUtil.converterEntidadeEmJson(movimento);
         try {
-            return restTemplate.post(urlBase.concat(Constantes.ENDPOINT_MOVIMENTO), json);
+            return restTemplate.post(urlBase.concat(Constantes.ENDPOINT_CONTA), json);
         } catch (IOException e) {
             e.printStackTrace();
             return false;
@@ -57,11 +56,11 @@ public class ContaClientImpl implements ContaClient {
     @Override
     public boolean alterar(Conta movimento, Long id) {
         String json = conversorUtil.converterEntidadeEmJson(movimento);
-        return restTemplate.put(urlBase.concat(Constantes.ENDPOINT_MOVIMENTO), id, json);
+        return restTemplate.put(urlBase.concat(Constantes.ENDPOINT_CONTA), id, json);
     }
 
     @Override
     public boolean deletar(Long id) {
-        return restTemplate.delete(urlBase.concat(Constantes.ENDPOINT_MOVIMENTO), id);
+        return restTemplate.delete(urlBase.concat(Constantes.ENDPOINT_CONTA), id);
     }
 }

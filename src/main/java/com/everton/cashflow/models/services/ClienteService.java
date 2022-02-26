@@ -1,5 +1,6 @@
 package com.everton.cashflow.models.services;
 
+import com.everton.cashflow.models.clients.implementacoes.ClienteClientImpl;
 import com.everton.cashflow.models.clients.interfaces.ClienteClient;
 import com.everton.cashflow.models.entidades.Cliente;
 
@@ -16,6 +17,10 @@ public class ClienteService {
                 : new ClienteService();
     }
 
+    public ClienteService() {
+        this.clienteClient = ClienteClientImpl.getInstance();
+    }
+
     public List<Cliente> listarTodos() {
         return clienteClient.listarTodos();
     }
@@ -29,10 +34,10 @@ public class ClienteService {
     }
 
     public boolean alterar(Cliente movimento, Long id) {
-       return clienteService.alterar(movimento, id);
+       return clienteService.getInstance().alterar(movimento, id);
     }
 
     public boolean deletar(Long id) {
-        return clienteService.deletar(id);
+        return clienteService.getInstance().deletar(id);
     }
 }

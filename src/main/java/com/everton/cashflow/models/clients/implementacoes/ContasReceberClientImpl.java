@@ -18,8 +18,7 @@ public class ContasReceberClientImpl implements ContasReceberClient {
     private String urlBase;
     private ConversorUtil<ContasReceber> conversorUtil;
 
-    @Override
-    public ContasReceberClient getInstance(){
+    public static ContasReceberClient getInstance(){
         return Objects.nonNull(contasReceberClient)
                 ? contasReceberClient
                 : new ContasReceberClientImpl();
@@ -33,13 +32,13 @@ public class ContasReceberClientImpl implements ContasReceberClient {
 
     @Override
     public List<ContasReceber> listarTodos() {
-        String json = restTemplate.get(urlBase.concat(Constantes.ENDPOINT_MOVIMENTO));
-        return conversorUtil.converterJsonEmListaEntidade(json);
+        String json = restTemplate.get(urlBase.concat(Constantes.ENDPOINT_FINANCEIRO_A_RECEBER));
+        return conversorUtil.converterJsonEmListaEntidade(json, ContasReceber.class);
     }
 
     @Override
     public ContasReceber buscarPorId(Long id) {
-        String json = restTemplate.getById(urlBase.concat(Constantes.ENDPOINT_MOVIMENTO), id);
+        String json = restTemplate.getById(urlBase.concat(Constantes.ENDPOINT_FINANCEIRO_A_RECEBER), id);
         return conversorUtil.converterJsonEmEntidade(json, ContasReceber.class);
     }
 
@@ -47,7 +46,7 @@ public class ContasReceberClientImpl implements ContasReceberClient {
     public boolean cadastrar(ContasReceber movimento) {
         String json = conversorUtil.converterEntidadeEmJson(movimento);
         try {
-            return restTemplate.post(urlBase.concat(Constantes.ENDPOINT_MOVIMENTO), json);
+            return restTemplate.post(urlBase.concat(Constantes.ENDPOINT_FINANCEIRO_A_RECEBER), json);
         } catch (IOException e) {
             e.printStackTrace();
             return false;
@@ -57,11 +56,11 @@ public class ContasReceberClientImpl implements ContasReceberClient {
     @Override
     public boolean alterar(ContasReceber movimento, Long id) {
         String json = conversorUtil.converterEntidadeEmJson(movimento);
-        return restTemplate.put(urlBase.concat(Constantes.ENDPOINT_MOVIMENTO), id, json);
+        return restTemplate.put(urlBase.concat(Constantes.ENDPOINT_FINANCEIRO_A_RECEBER), id, json);
     }
 
     @Override
     public boolean deletar(Long id) {
-        return restTemplate.delete(urlBase.concat(Constantes.ENDPOINT_MOVIMENTO), id);
+        return restTemplate.delete(urlBase.concat(Constantes.ENDPOINT_FINANCEIRO_A_RECEBER), id);
     }
 }

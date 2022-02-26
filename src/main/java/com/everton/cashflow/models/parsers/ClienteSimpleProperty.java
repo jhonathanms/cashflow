@@ -1,5 +1,6 @@
 package com.everton.cashflow.models.parsers;
 
+import com.everton.cashflow.models.entidades.Cliente;
 import javafx.beans.property.SimpleLongProperty;
 import javafx.beans.property.SimpleStringProperty;
 
@@ -44,5 +45,9 @@ public class ClienteSimpleProperty implements Serializable {
 
     public void setNomeCliente(String nomeCliente) {
         this.nomeCliente.set(nomeCliente);
+    }
+
+    public static ClienteSimpleProperty converterParaSimpleProperty(Cliente cliente){
+        return new ClienteSimpleProperty(cliente.getId(), cliente.getNomeCliente());
     }
 }

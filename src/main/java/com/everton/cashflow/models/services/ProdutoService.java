@@ -1,5 +1,7 @@
 package com.everton.cashflow.models.services;
 
+import com.everton.cashflow.models.clients.implementacoes.ClienteClientImpl;
+import com.everton.cashflow.models.clients.implementacoes.ProdutoClientImpl;
 import com.everton.cashflow.models.clients.interfaces.ProdutoClient;
 import com.everton.cashflow.models.entidades.Produto;
 
@@ -14,6 +16,10 @@ public class ProdutoService {
         return Objects.nonNull(produtoService)
                 ? produtoService
                 : new ProdutoService();
+    }
+
+    public ProdutoService() {
+        this.produtoClient = ProdutoClientImpl.getInstance();
     }
 
     public List<Produto> listarTodos() {

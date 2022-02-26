@@ -3,7 +3,9 @@ package com.everton.cashflow.util;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.type.CollectionType;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
@@ -25,9 +27,11 @@ public class ConversorUtil<T> {
         }
     }
 
-    public List<T> converterJsonEmListaEntidade(String json){
+    public List<T> converterJsonEmListaEntidade(String json, Class<T> tClass){
         try {
-            return new ObjectMapper().readValue(json, new TypeReference<List<T>>(){});
+            ObjectMapper mapper = new ObjectMapper();
+            CollectionType listType = mapper.getTypeFactory().constructCollectionType(ArrayList.class, tClass);
+            return mapper.readValue(json, listType);
         } catch (JsonProcessingException e) {
             e.printStackTrace();
             return null;

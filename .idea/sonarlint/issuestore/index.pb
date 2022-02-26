@@ -33,5 +33,3 @@ w
 Gsrc/main/java/com/everton/cashflow/controller/FinanceiroController.java,a\2\a29969864ec54d00872d49bdd2e21d3515c14320
 q
 Asrc/main/java/com/everton/cashflow/controller/HomeController.java,9\f\9ff0ddd6b185f04488f9c1ae0bbd8df758c25b82
-m
-=src/main/java/com/everton/cashflow/main/IndexApplication.java,3\b\3bd7c4688446575f34daea035b3b14626435f862

@@ -1,5 +1,7 @@
 package com.everton.cashflow.models.services;
 
+import com.everton.cashflow.models.clients.implementacoes.ContaClientImpl;
+import com.everton.cashflow.models.clients.implementacoes.ProdutoClientImpl;
 import com.everton.cashflow.models.clients.interfaces.ContaClient;
 import com.everton.cashflow.models.entidades.Conta;
 
@@ -14,6 +16,10 @@ public class ContaService {
         return Objects.nonNull(contaService)
                 ? contaService
                 : new ContaService();
+    }
+
+    public ContaService() {
+        this.contaClient = ContaClientImpl.getInstance();
     }
 
     public List<Conta> listarTodos() {

@@ -18,8 +18,7 @@ public class ClienteClientImpl implements ClienteClient {
     private String urlBase;
     private ConversorUtil<Cliente> conversorUtil;
 
-    @Override
-    public ClienteClient getInstance(){
+    public static ClienteClient getInstance(){
         return Objects.nonNull(clienteClient)
                 ? clienteClient
                 : new ClienteClientImpl();
@@ -33,13 +32,13 @@ public class ClienteClientImpl implements ClienteClient {
 
     @Override
     public List<Cliente> listarTodos() {
-        String json = restTemplate.get(urlBase.concat(Constantes.ENDPOINT_MOVIMENTO));
-        return conversorUtil.converterJsonEmListaEntidade(json);
+        String json = restTemplate.get(urlBase.concat(Constantes.ENDPOINT_CLIENTE));
+        return conversorUtil.converterJsonEmListaEntidade(json, Cliente.class);
     }
 
     @Override
     public Cliente buscarPorId(Long id) {
-        String json = restTemplate.getById(urlBase.concat(Constantes.ENDPOINT_MOVIMENTO), id);
+        String json = restTemplate.getById(urlBase.concat(Constantes.ENDPOINT_CLIENTE), id);
         return conversorUtil.converterJsonEmEntidade(json, Cliente.class);
     }
 
@@ -47,7 +46,7 @@ public class ClienteClientImpl implements ClienteClient {
     public boolean cadastrar(Cliente movimento) {
         String json = conversorUtil.converterEntidadeEmJson(movimento);
         try {
-            return restTemplate.post(urlBase.concat(Constantes.ENDPOINT_MOVIMENTO), json);
+            return restTemplate.post(urlBase.concat(Constantes.ENDPOINT_CLIENTE), json);
         } catch (IOException e) {
             e.printStackTrace();
             return false;
@@ -57,11 +56,11 @@ public class ClienteClientImpl implements ClienteClient {
     @Override
     public boolean alterar(Cliente movimento, Long id) {
         String json = conversorUtil.converterEntidadeEmJson(movimento);
-        return restTemplate.put(urlBase.concat(Constantes.ENDPOINT_MOVIMENTO), id, json);
+        return restTemplate.put(urlBase.concat(Constantes.ENDPOINT_CLIENTE), id, json);
     }
 
     @Override
     public boolean deletar(Long id) {
-        return restTemplate.delete(urlBase.concat(Constantes.ENDPOINT_MOVIMENTO), id);
+        return restTemplate.delete(urlBase.concat(Constantes.ENDPOINT_CLIENTE), id);
     }
 }

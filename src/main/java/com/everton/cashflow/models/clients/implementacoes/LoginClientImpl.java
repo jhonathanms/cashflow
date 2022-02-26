@@ -16,8 +16,7 @@ public class LoginClientImpl implements LoginClient {
     private static LoginClientImpl loginClient;
     private RestTemplate<UsuarioDTO> restTemplate;
 
-    @Override
-    public LoginClient getInstance(){
+    public static LoginClient getInstance(){
         return Objects.nonNull(loginClient)
                 ? loginClient
                 : new LoginClientImpl();

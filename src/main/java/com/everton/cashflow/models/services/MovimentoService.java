@@ -1,5 +1,7 @@
 package com.everton.cashflow.models.services;
 
+import com.everton.cashflow.models.clients.implementacoes.MovimentoClientImpl;
+import com.everton.cashflow.models.clients.implementacoes.ProdutoClientImpl;
 import com.everton.cashflow.models.clients.interfaces.MovimentoClient;
 import com.everton.cashflow.models.entidades.Movimento;
 
@@ -14,6 +16,10 @@ public class MovimentoService{
         return Objects.nonNull(movimentoService)
                 ? movimentoService
                 : new MovimentoService();
+    }
+
+    public MovimentoService() {
+        this.movimentoClient = MovimentoClientImpl.getInstance();
     }
 
     public List<Movimento> listarTodos() {

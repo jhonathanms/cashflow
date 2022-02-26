@@ -28,14 +28,14 @@ public class RestTemplate<T> {
 
         try {
             response = call.execute();
+            return response.body().string();
+
         } catch (IOException e) {
             e.printStackTrace();
+            return null;
         }
-
-        String json = response.body().toString();
-
-        return json;
     }
+
     public String getById(String uri, Long id){
         String uriCompleta = Objects.nonNull(id) ? uri.concat("/" + id) : uri;
         Request request = new Request.Builder()
@@ -47,13 +47,12 @@ public class RestTemplate<T> {
 
         try {
             response = call.execute();
+            return response.body().string();
+
         } catch (IOException e) {
             e.printStackTrace();
+            return null;
         }
-
-        String json = response.body().toString();
-
-        return json;
     }
 
     public String get(String uri, Map<String, String> parametros){
@@ -71,21 +70,14 @@ public class RestTemplate<T> {
 
         Call call = client.newCall(request);
         Response response = null;
+
         try {
             response = call.execute();
-
+            return response.body().toString();
         } catch (IOException e) {
             e.printStackTrace();
+            return null;
         }
-
-        if(!response.isSuccessful())
-            try {
-                throw new IOException("Exception code " + response);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-
-        return response.body().toString();
     }
 
     public boolean post(String uri, String JsonBody) throws IOException {
