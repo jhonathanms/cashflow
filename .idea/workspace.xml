@@ -5,24 +5,46 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="521a0dae-6c52-4c44-9437-1d97fc97d66d" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/everton/cashflow/controller/CadastroController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/everton/cashflow/controller/FinanceiroController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/everton/cashflow/controller/HomeController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/everton/cashflow/controller/MovimentoController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/fxmls/section-cadastro.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/fxmls/section-financeiro.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/fxmls/section-home.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/fxmls/section-movimento.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/styles/section-home.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/everton/cashflow/models/clients/implementacoes/ClienteClientImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/everton/cashflow/models/clients/implementacoes/ContaClientImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/everton/cashflow/models/clients/implementacoes/ContasPagarClientImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/everton/cashflow/models/clients/implementacoes/ContasReceberClientImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/everton/cashflow/models/clients/implementacoes/MovimentoClientImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/everton/cashflow/models/clients/implementacoes/ProdutoClientImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/everton/cashflow/models/clients/interfaces/ClienteClient.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/everton/cashflow/models/clients/interfaces/ContaClient.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/everton/cashflow/models/clients/interfaces/ContasPagarClient.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/everton/cashflow/models/clients/interfaces/ContasReceberClient.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/everton/cashflow/models/clients/interfaces/MovimentoClient.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/everton/cashflow/models/clients/interfaces/ProdutoClient.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/everton/cashflow/models/entidades/Cliente.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/everton/cashflow/models/entidades/Conta.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/everton/cashflow/models/entidades/ContasPagar.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/everton/cashflow/models/entidades/ContasReceber.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/everton/cashflow/models/entidades/Movimento.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/everton/cashflow/models/entidades/Produto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/everton/cashflow/models/enums/FormaDePagamento.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/everton/cashflow/models/enums/TipoConta.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/everton/cashflow/models/services/ClienteService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/everton/cashflow/models/services/ContaService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/everton/cashflow/models/services/ContasPagarService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/everton/cashflow/models/services/ContasReceberService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/everton/cashflow/models/services/MovimentoService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/everton/cashflow/models/services/ProdutoService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/everton/cashflow/util/ConversorUtil.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/everton/cashflow/controller/IndexController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/everton/cashflow/controller/IndexController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/everton/cashflow/controller/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/everton/cashflow/controller/LoginController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/everton/cashflow/main/IndexApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/everton/cashflow/main/IndexApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/everton/cashflow/main/LoginApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/everton/cashflow/main/LoginApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/everton/cashflow/models/clients/implementacoes/LoginClientImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/everton/cashflow/models/clients/implementacoes/LoginClientImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/everton/cashflow/models/clients/implementacoes/RequestResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/everton/cashflow/models/clients/implementacoes/RestTemplate.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/everton/cashflow/models/clients/interfaces/GenericClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/everton/cashflow/models/clients/interfaces/GenericClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/everton/cashflow/models/clients/interfaces/LoginClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/everton/cashflow/models/clients/interfaces/LoginClient.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/everton/cashflow/models/constantes/Constantes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/everton/cashflow/models/constantes/Constantes.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/fxmls/index.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxmls/index.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/styles/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/styles/index.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/everton/cashflow/models/entidades/UsuarioDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/everton/cashflow/models/dto/UsuarioDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/everton/cashflow/models/services/GenericService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/everton/cashflow/models/services/GenericService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/everton/cashflow/models/services/LoginService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/everton/cashflow/models/services/LoginService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/everton/cashflow/util/ExtracaoDeDados.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/everton/cashflow/util/ExtracaoDeDados.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,8 +56,8 @@
       <list>
         <option value="FxmlFile" />
         <option value="Interface" />
-        <option value="Class" />
         <option value="JavaFXApplication" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -53,6 +75,11 @@
         </map>
       </branch-storage>
     </favorite-branches>
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="main" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GitToolBoxStore">
@@ -65,12 +92,12 @@
               <option name="branches">
                 <list>
                   <RecentBranch>
-                    <option name="branchName" value="main" />
-                    <option name="lastUsedInstant" value="1645503754" />
+                    <option name="branchName" value="develop" />
+                    <option name="lastUsedInstant" value="1645821843" />
                   </RecentBranch>
                   <RecentBranch>
-                    <option name="branchName" value="master" />
-                    <option name="lastUsedInstant" value="1645503753" />
+                    <option name="branchName" value="main" />
+                    <option name="lastUsedInstant" value="1645503754" />
                   </RecentBranch>
                 </list>
               </option>
@@ -106,7 +133,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="SONARLINT_PRECOMMIT_ANALYSIS" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources/fxmls" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/java/com/everton/cashflow/models" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.3402299" />
@@ -114,6 +141,8 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\temp\cashflow\src\main\java\com\everton\cashflow\models" />
+      <recent name="C:\temp\cashflow\src\main\java\com\everton\cashflow\models\entidades" />
       <recent name="C:\temp\cashflow\src\main\resources\fxmls" />
       <recent name="C:\temp\cashflow\src\main\resources\styles" />
       <recent name="C:\temp\cashflow\src\main\resources\imagens\icons" />
@@ -125,7 +154,10 @@
       <recent name="C:\temp\cashflow\src\main\resources\fxml" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.everton.cashflow.models.services" />
       <recent name="com.everton.cashflow.controller" />
+      <recent name="com.everton.cashflow.models.clients.implementacoes" />
+      <recent name="com.everton.cashflow.models.clients.interfaces" />
       <recent name="com.everton.cashflow.models.entidades" />
     </key>
   </component>
@@ -186,7 +218,21 @@
       <option name="project" value="LOCAL" />
       <updated>1645763660104</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Criado ação de menu e as sub-telas (movimento, financeiro e cadastro).">
+      <created>1645821825906</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1645821825906</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Criado branch develop.">
+      <created>1645821873537</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1645821873537</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -194,27 +240,8 @@
     <MESSAGE value="Implementado autenticação de usuários." />
     <MESSAGE value="Ajustado rota de autenticação de usuarios" />
     <MESSAGE value="Criado tela Index e menu lateral." />
-    <option name="LAST_COMMIT_MESSAGE" value="Criado tela Index e menu lateral." />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/everton/cashflow/models/clients/implementacoes/LoginClientImpl.java</url>
-          <line>33</line>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/everton/cashflow/models/clients/implementacoes/LoginClientImpl.java</url>
-          <line>34</line>
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/everton/cashflow/models/clients/implementacoes/LoginClientImpl.java</url>
-          <line>37</line>
-          <option name="timeStamp" value="4" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="Criado ação de menu e as sub-telas (movimento, financeiro e cadastro)." />
+    <MESSAGE value="Criado branch develop." />
+    <option name="LAST_COMMIT_MESSAGE" value="Criado branch develop." />
   </component>
 </project>

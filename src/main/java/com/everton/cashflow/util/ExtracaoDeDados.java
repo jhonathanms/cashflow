@@ -26,5 +26,10 @@ public class ExtracaoDeDados {
         }
     }
 
+    public static String obterURLBase(){
+            Properties properties = obterPropriedades();
+            return properties.getProperty(Constantes.PROP_URL_BASE);
+    }
+
 
 }

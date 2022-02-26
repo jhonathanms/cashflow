@@ -1,9 +1,11 @@
 package com.everton.cashflow.models.clients.interfaces;
 
+import java.util.List;
+
 public interface GenericClient<T> {
-    T listarTodos();
+    List<T> listarTodos();
     T buscarPorId(Long id);
-    T cadastrar(T t);
-    T alterar(T t, Long id);
-    void deletar();
+    boolean cadastrar(T t);
+    boolean alterar(T t, Long id);
+    boolean deletar(Long id);
 }

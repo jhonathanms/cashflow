@@ -3,10 +3,9 @@ package com.everton.cashflow.models.clients.implementacoes;
 import com.everton.cashflow.models.clients.interfaces.LoginClient;
 import com.everton.cashflow.models.constantes.Constantes;
 import com.everton.cashflow.models.entidades.Usuario;
-import com.everton.cashflow.models.entidades.UsuarioDTO;
+import com.everton.cashflow.models.dto.UsuarioDTO;
+import com.everton.cashflow.util.ConversorUtil;
 import com.everton.cashflow.util.ExtracaoDeDados;
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
 
 import java.io.IOException;
 import java.util.Objects;
@@ -15,16 +14,17 @@ import java.util.Properties;
 public class LoginClientImpl implements LoginClient {
 
     private static LoginClientImpl loginClient;
-    private RequestResponse<UsuarioDTO> requisicao;
+    private RestTemplate<UsuarioDTO> restTemplate;
 
-    public static LoginClient getInstance(){
+    @Override
+    public LoginClient getInstance(){
         return Objects.nonNull(loginClient)
                 ? loginClient
                 : new LoginClientImpl();
     }
 
     public LoginClientImpl() {
-        this.requisicao = new RequestResponse<>();
+        this.restTemplate = RestTemplate.getInstance();
     }
 
     @Override
@@ -32,10 +32,11 @@ public class LoginClientImpl implements LoginClient {
         Properties props = ExtracaoDeDados.obterPropriedades();
         assert props != null;
         String urlBase = props.getProperty(Constantes.PROP_URL_BASE);
-        String jsonUsuario = converterEntidadeEmJson( UsuarioDTO.converterParaDto(usuario));
+        String jsonUsuario = new ConversorUtil<UsuarioDTO>()
+                .converterEntidadeEmJson(UsuarioDTO.converterParaDto(usuario));
 
         try {
-           return requisicao.post(urlBase.concat(Constantes.ENDPOINT_LOGIN), jsonUsuario);
+           return restTemplate.post(urlBase.concat(Constantes.ENDPOINT_USUARIOS_LOGAR), jsonUsuario);
         } catch (IOException e) {
             e.printStackTrace();
             return false;
@@ -44,16 +45,9 @@ public class LoginClientImpl implements LoginClient {
 
     @Override
     public boolean testarConexao(String urlBase) throws IOException {
-        return requisicao.testeConexao(urlBase);
+        return restTemplate.testeConexao(urlBase);
     }
 
-    public String converterEntidadeEmJson(UsuarioDTO entidade){
-        try {
-            return new ObjectMapper().writer().writeValueAsString(entidade);
-        } catch (JsonProcessingException e) {
-            e.printStackTrace();
-            return null;
-        }
-    }
+
 
 }

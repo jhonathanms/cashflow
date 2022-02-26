@@ -5,15 +5,12 @@ import animatefx.animation.FadeOut;
 import com.everton.cashflow.main.IndexApplication;
 import com.everton.cashflow.main.LoginApplication;
 import com.everton.cashflow.models.constantes.Constantes;
-import com.everton.cashflow.models.entidades.Usuario;
 import com.everton.cashflow.models.services.LoginService;
 import com.everton.cashflow.util.Alerts;
 import com.everton.cashflow.util.ExtracaoDeDados;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
-import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
@@ -62,13 +59,13 @@ public class LoginController implements Initializable {
     private IndexApplication indexApplication = IndexApplication.getInstance();
 
     @FXML
-    private void fecharTela(ActionEvent evento){
+    private void fecharTela(){
         (new FadeOut(this.root)).play();
-        loginService.fecharTela(evento, paneConfig);
+            System.exit(0);
     }
 
     @FXML
-    private void acessar(ActionEvent evento){
+    private void acessar(){
         String login = ExtracaoDeDados.parseToString(txtUsuario);
         String senha = ExtracaoDeDados.parseToString(txtSenha);
 
@@ -100,7 +97,7 @@ public class LoginController implements Initializable {
     }
 
     @FXML
-    private void configuracao(MouseEvent evento) {
+    private void configuracao() {
         (new FadeIn(this.paneConfig)).play();
         this.paneConfig.toFront();
         String urlBase = ExtracaoDeDados.obterPropriedades()
@@ -118,7 +115,7 @@ public class LoginController implements Initializable {
     }
 
     @FXML
-    private void salvarConfig(ActionEvent evento){
+    private void salvarConfig(){
         String url = ExtracaoDeDados.parseToString(txtUrl);
         boolean sucesso = loginService.salvarConfig(Constantes.PROP_URL_BASE, url);
         if(!sucesso) Alerts.alertaSimples(
@@ -131,13 +128,13 @@ public class LoginController implements Initializable {
     }
 
     @FXML
-    private void cancelar(ActionEvent evento){
+    private void cancelar(){
         new FadeOut(paneConfig).play();
         paneConfig.toBack();
     }
 
     @FXML
-    private void testarConexao(ActionEvent evento){
+    private void testarConexao(){
         String urlBase = ExtracaoDeDados.parseToString(txtUrl);
 
         try {

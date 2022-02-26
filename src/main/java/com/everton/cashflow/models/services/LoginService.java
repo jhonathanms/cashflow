@@ -1,12 +1,8 @@
 package com.everton.cashflow.models.services;
 
-import animatefx.animation.FadeIn;
-import com.everton.cashflow.models.clients.implementacoes.LoginClientImpl;
 import com.everton.cashflow.models.clients.interfaces.LoginClient;
 import com.everton.cashflow.models.constantes.Constantes;
 import com.everton.cashflow.models.entidades.Usuario;
-import javafx.event.Event;
-import javafx.scene.Node;
 import lombok.SneakyThrows;
 
 import java.io.File;
@@ -17,7 +13,7 @@ import java.time.LocalDateTime;
 import java.util.Objects;
 import java.util.Properties;
 
-public class LoginService extends GenericService{
+public class LoginService{
     private static LoginService loginService;
     private LoginClient loginClient;
 
@@ -27,18 +23,9 @@ public class LoginService extends GenericService{
                 : new LoginService();
     }
 
-    public LoginService() {
-        this.loginClient = new LoginClientImpl();
-    }
-
-    @Override
-    public void fecharTela(Event event, Node node) {
-        System.exit(0);
-    }
-
     public boolean acessar(Usuario usuario){
         try {
-            return loginClient.autenticacao(usuario);
+            return loginClient.getInstance().autenticacao(usuario);
         } catch (IOException e) {
             e.printStackTrace();
             return false;
@@ -63,7 +50,7 @@ public class LoginService extends GenericService{
     }
 
     public void testarConexao(String urlBase) throws IOException {
-        loginClient.testarConexao(urlBase);
+        loginClient.getInstance().testarConexao(urlBase);
     }
 
 }

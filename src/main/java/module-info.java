@@ -18,4 +18,6 @@ module com.everton.cashflow.cashflow {
     opens com.everton.cashflow.main to javafx.fxml;
     exports com.everton.cashflow.models.entidades;
     opens com.everton.cashflow.models.entidades to javafx.fxml;
+    exports com.everton.cashflow.models.dto;
+    opens com.everton.cashflow.models.dto to javafx.fxml;
 }
