@@ -34,10 +34,10 @@ public class ClienteService {
     }
 
     public boolean alterar(Cliente movimento, Long id) {
-       return clienteService.getInstance().alterar(movimento, id);
+       return clienteClient.alterar(movimento, id);
     }
 
     public boolean deletar(Long id) {
-        return clienteService.getInstance().deletar(id);
+        return clienteClient.deletar(id);
     }
 }

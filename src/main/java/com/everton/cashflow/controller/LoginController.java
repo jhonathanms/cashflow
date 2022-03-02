@@ -7,7 +7,7 @@ import com.everton.cashflow.main.LoginApplication;
 import com.everton.cashflow.models.constantes.Constantes;
 import com.everton.cashflow.models.entidades.Usuario;
 import com.everton.cashflow.models.services.LoginService;
-import com.everton.cashflow.util.Alerts;
+import com.everton.cashflow.util.AlertsUtil;
 import com.everton.cashflow.util.ExtracaoDeDados;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -67,11 +67,11 @@ public class LoginController implements Initializable {
 
     @FXML
     private void acessar(){
-        String login = ExtracaoDeDados.parseToString(txtUsuario);
-        String senha = ExtracaoDeDados.parseToString(txtSenha);
+        String login = ExtracaoDeDados.textFieldToString(txtUsuario);
+        String senha = ExtracaoDeDados.textFieldToString(txtSenha);
 
         if(ehNuloOuVazio(login) || ehNuloOuVazio(senha)){
-            Alerts.alertaSimples(
+            AlertsUtil.alertaSimples(
                     "Autenticação",
                     "Login e/ou Senha não pode(m) ficar vazio(s)",
                     Alert.AlertType.WARNING);
@@ -83,7 +83,7 @@ public class LoginController implements Initializable {
                 indexApplication.start(new Stage());
                 LoginApplication.getStage().close();
             }else{
-                Alerts.alertaSimples(
+                AlertsUtil.alertaSimples(
                         "Autenticação",
                         "Ops! Login e/ou senha incorreto",
                         Alert.AlertType.WARNING
@@ -117,9 +117,9 @@ public class LoginController implements Initializable {
 
     @FXML
     private void salvarConfig(){
-        String url = ExtracaoDeDados.parseToString(txtUrl);
+        String url = ExtracaoDeDados.textFieldToString(txtUrl);
         boolean sucesso = loginService.salvarConfig(Constantes.PROP_URL_BASE, url);
-        if(!sucesso) Alerts.alertaSimples(
+        if(!sucesso) AlertsUtil.alertaSimples(
                 "Configurações",
                 "Ocorreu um problema ao tentar salvar.",
                 Alert.AlertType.ERROR
@@ -136,17 +136,17 @@ public class LoginController implements Initializable {
 
     @FXML
     private void testarConexao(){
-        String urlBase = ExtracaoDeDados.parseToString(txtUrl);
+        String urlBase = ExtracaoDeDados.textFieldToString(txtUrl);
 
         try {
             loginService.testarConexao(urlBase);
-            Alerts.alertaSimples(
+            AlertsUtil.alertaSimples(
                     "Teste de conexão",
                     "Conexão realizada com sucesso!",
                     Alert.AlertType.INFORMATION
             );
         } catch (IOException e) {
-            Alerts.alertException(
+            AlertsUtil.alertException(
                     "Teste de conexão",
                     "Erro ao tentar se conectar com o servidor",
                     e.getMessage());

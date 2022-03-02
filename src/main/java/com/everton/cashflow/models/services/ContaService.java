@@ -35,10 +35,10 @@ public class ContaService {
     }
 
     public boolean alterar(Conta movimento, Long id) {
-       return contaService.alterar(movimento, id);
+       return contaClient.alterar(movimento, id);
     }
 
     public boolean deletar(Long id) {
-        return contaService.deletar(id);
+        return contaClient.deletar(id);
     }
 }

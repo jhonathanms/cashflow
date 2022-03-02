@@ -10,8 +10,20 @@ import java.util.Properties;
 
 public class ExtracaoDeDados {
 
-    public static String parseToString(TextField textField){
+    public static String textFieldToString(TextField textField){
         return Objects.nonNull(textField) ? textField.getText() : null;
+    }
+
+    public static int textFieldToInt(TextField textField){
+        return Objects.nonNull(textField) ? Integer.parseInt(textField.getText()) : 0;
+    }
+
+    public static double textFieldToDouble(TextField textField){
+        return Objects.nonNull(textField) ? Double.parseDouble(textField.getText()) : 0.0;
+    }
+
+    public static long textFieldToLong(TextField textField){
+        return Objects.nonNull(textField) ? Long.parseLong(textField.getText()) : 0;
     }
 
     public static Properties obterPropriedades(){

@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.Group?>
 <?import javafx.scene.control.Accordion?>
 <?import javafx.scene.control.Button?>
@@ -44,15 +45,21 @@
                                  <children>
                                     <HBox spacing="20.0">
                                        <children>
-                                          <Button onAction="#abrirCadastroCliente" fx:id="btnNovoClientes" mnemonicParsing="false" prefHeight="40.0" prefWidth="109.0" styleClass="botao-novo-cadastro" text="Novo">
+                                          <Button fx:id="btnNovoClientes" mnemonicParsing="false" onAction="#abrirCadastroCliente" prefHeight="40.0" prefWidth="109.0" styleClass="botao-novo-cadastro" text="Novo">
                                              <font>
                                                 <Font size="14.0" />
                                              </font>
+                                             <cursor>
+                                                <Cursor fx:constant="HAND" />
+                                             </cursor>
                                           </Button>
                                           <Button fx:id="btnExporportarClientes" mnemonicParsing="false" prefHeight="40.0" prefWidth="109.0" styleClass="botao-exportar-pdf" text="Exportar">
                                              <font>
                                                 <Font size="14.0" />
                                              </font>
+                                             <cursor>
+                                                <Cursor fx:constant="HAND" />
+                                             </cursor>
                                           </Button>
                                           <Group>
                                              <children>
@@ -72,16 +79,20 @@
                                                          </image>
                                                       </ImageView>
                                                    </graphic>
+                                                   <cursor>
+                                                      <Cursor fx:constant="HAND" />
+                                                   </cursor>
                                                 </Button>
                                              </children>
                                           </Group>
                                        </children>
                                     </HBox>
-                                    <TableView fx:id="tbClientes" prefHeight="322.0" prefWidth="858.0">
+                                    <TableView fx:id="tbClientes" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="299.0" prefWidth="858.0">
                                        <columns>
                                           <TableColumn fx:id="colCodClientes" prefWidth="75.0" resizable="false" text="Código" />
-                                          <TableColumn fx:id="colNomeClientes" minWidth="-1.0" prefWidth="690.0" resizable="false" text="Nome" />
-                                          <TableColumn fx:id="colAcoesClientes" maxWidth="-Infinity" minWidth="100.0" prefWidth="300.0" resizable="false" text="" />
+                                          <TableColumn fx:id="colNomeClientes" minWidth="-1.0" prefWidth="660.9999923706055" resizable="false" text="Nome" />
+                                          <TableColumn fx:id="colBtnEditarCliente" maxWidth="60.0" minWidth="0.0" prefWidth="0.0" />
+                                          <TableColumn fx:id="colBtnDeleteCliente" maxWidth="60.0" minWidth="60.0" prefWidth="60.0" />
                                        </columns>
                                        <columnResizePolicy>
                                           <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
@@ -104,15 +115,21 @@
                                  <children>
                                     <HBox spacing="20.0">
                                        <children>
-                                          <Button fx:id="btnNovoProdutos" mnemonicParsing="false" prefHeight="40.0" prefWidth="109.0" styleClass="botao-novo-cadastro" text="Novo">
+                                          <Button fx:id="btnNovoProdutos" mnemonicParsing="false" onAction="#abrirCadastroProduto" prefHeight="40.0" prefWidth="109.0" styleClass="botao-novo-cadastro" text="Novo">
                                              <font>
                                                 <Font size="14.0" />
                                              </font>
+                                             <cursor>
+                                                <Cursor fx:constant="HAND" />
+                                             </cursor>
                                           </Button>
                                           <Button fx:id="btnExporportarProdutos" mnemonicParsing="false" prefHeight="40.0" prefWidth="109.0" styleClass="botao-exportar-pdf" text="Exportar">
                                              <font>
                                                 <Font size="14.0" />
                                              </font>
+                                             <cursor>
+                                                <Cursor fx:constant="HAND" />
+                                             </cursor>
                                           </Button>
                                           <Group>
                                              <children>
@@ -132,18 +149,22 @@
                                                          </image>
                                                       </ImageView>
                                                    </graphic>
+                                                   <cursor>
+                                                      <Cursor fx:constant="HAND" />
+                                                   </cursor>
                                                 </Button>
                                              </children>
                                           </Group>
                                        </children>
                                     </HBox>
-                                    <TableView fx:id="tbProdutos" prefHeight="322.0" prefWidth="858.0">
+                                    <TableView fx:id="tbProdutos" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="299.0" prefWidth="858.0">
                                        <columns>
                                           <TableColumn fx:id="colCodProdutos" prefWidth="75.0" resizable="false" text="Código" />
-                                          <TableColumn fx:id="colDescricaoodutos" minWidth="-1.0" prefWidth="470.0" resizable="false" text="Descrição" />
-                                          <TableColumn fx:id="colEstoqueProdutos" minWidth="-1.0" prefWidth="100.0" resizable="false" text="Estoque" />
-                                          <TableColumn fx:id="colValorProdutos" minWidth="-1.0" prefWidth="120.0" resizable="false" text="Valor" />
-                                          <TableColumn fx:id="colAcoesProdutos" maxWidth="-Infinity" minWidth="100.0" prefWidth="300.0" resizable="false" text="Ações" />
+                                          <TableColumn fx:id="colDescricaoodutos" minWidth="-1.0" prefWidth="461.99999237060547" resizable="false" text="Descrição" />
+                                          <TableColumn fx:id="colEstoqueProdutos" minWidth="-1.0" prefWidth="81.33331298828125" resizable="false" text="Estoque" />
+                                          <TableColumn fx:id="colValorProdutos" minWidth="-1.0" prefWidth="121.66668701171875" resizable="false" text="Valor" />
+                                          <TableColumn fx:id="colBtnEditarProdutos" maxWidth="60.0" minWidth="60.0" prefWidth="60.0" />
+                                          <TableColumn fx:id="colBtnDeleteProdutos" maxWidth="60.0" minWidth="60.0" prefWidth="60.0" />
                                        </columns>
                                        <columnResizePolicy>
                                           <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
@@ -162,7 +183,7 @@
                      <content>
                         <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="280.0" prefWidth="200.0">
                            <children>
-                              <VBox prefHeight="280.0" prefWidth="883.0" spacing="15.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                              <VBox layoutX="25.8" layoutY="25.8" prefHeight="298.0" prefWidth="857.0" spacing="15.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="13.0" AnchorPane.rightAnchor="13.0" AnchorPane.topAnchor="13.0">
                                  <children>
                                     <HBox spacing="20.0">
                                        <children>
@@ -170,11 +191,17 @@
                                              <font>
                                                 <Font size="14.0" />
                                              </font>
+                                             <cursor>
+                                                <Cursor fx:constant="HAND" />
+                                             </cursor>
                                           </Button>
                                           <Button fx:id="btnExporportarContas" mnemonicParsing="false" prefHeight="40.0" prefWidth="109.0" styleClass="botao-exportar-pdf" text="Exportar">
                                              <font>
                                                 <Font size="14.0" />
                                              </font>
+                                             <cursor>
+                                                <Cursor fx:constant="HAND" />
+                                             </cursor>
                                           </Button>
                                           <Group>
                                              <children>
@@ -194,16 +221,19 @@
                                                          </image>
                                                       </ImageView>
                                                    </graphic>
+                                                   <cursor>
+                                                      <Cursor fx:constant="HAND" />
+                                                   </cursor>
                                                 </Button>
                                              </children>
                                           </Group>
                                        </children>
                                     </HBox>
-                                    <TableView fx:id="tbContas" prefHeight="222.0" prefWidth="858.0">
+                                    <TableView fx:id="tbContas" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="186.0" prefWidth="858.0">
                                        <columns>
                                           <TableColumn fx:id="colCodContas" prefWidth="75.0" resizable="false" text="Código" />
-                                          <TableColumn fx:id="colNomeContas" minWidth="-1.0" prefWidth="690.0" resizable="false" text="Nome" />
-                                          <TableColumn fx:id="colAcoesContas" maxWidth="-Infinity" minWidth="100.0" prefWidth="300.0" resizable="false" text="Ações" />
+                                          <TableColumn fx:id="colNomeContas" minWidth="-1.0" prefWidth="665.9999923706055" resizable="false" text="Nome" />
+                                          <TableColumn fx:id="colAcoesContas" maxWidth="90.0" minWidth="50.0" prefWidth="90.0" />
                                        </columns>
                                        <columnResizePolicy>
                                           <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />

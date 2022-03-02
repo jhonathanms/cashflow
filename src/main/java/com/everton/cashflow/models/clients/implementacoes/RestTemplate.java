@@ -113,15 +113,16 @@ public class RestTemplate<T> {
     }
 
     public boolean delete(String uri, Long id){
-        if(Objects.nonNull(id)) {
+        if(Objects.isNull(id)) {
             try {
                 throw new IOException("Informe um ID válido");
             } catch (IOException e) {
                 e.printStackTrace();
             }
         }
+        String uriCompleta = Objects.nonNull(id) ? uri.concat("/" + id) : uri;
         Request request = new Request.Builder()
-                .url(uri)
+                .url(uriCompleta)
                 .delete()
                 .build();
         Response response = null;

@@ -35,10 +35,10 @@ public class MovimentoService{
     }
 
     public boolean alterar(Movimento movimento, Long id) {
-       return movimentoService.alterar(movimento, id);
+       return movimentoClient.alterar(movimento, id);
     }
 
     public boolean deletar(Long id) {
-        return movimentoService.deletar(id);
+        return movimentoClient.deletar(id);
     }
 }

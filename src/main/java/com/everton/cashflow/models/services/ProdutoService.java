@@ -35,10 +35,10 @@ public class ProdutoService {
     }
 
     public boolean alterar(Produto movimento, Long id) {
-        return produtoService.alterar(movimento, id);
+        return produtoClient.alterar(movimento, id);
     }
 
     public boolean deletar(Long id) {
-        return produtoService.deletar(id);
+        return produtoClient.deletar(id);
     }
 }

@@ -50,4 +50,9 @@ public class ClienteSimpleProperty implements Serializable {
     public static ClienteSimpleProperty converterParaSimpleProperty(Cliente cliente){
         return new ClienteSimpleProperty(cliente.getId(), cliente.getNomeCliente());
     }
+
+    public static Cliente converterParaEntidade(ClienteSimpleProperty clienteSimpleProperty){
+        return new Cliente(clienteSimpleProperty.getId(), clienteSimpleProperty.getNomeCliente(), null);
+    }
+
 }

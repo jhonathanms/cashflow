@@ -10,7 +10,7 @@ import java.io.FileNotFoundException;
 import java.io.PrintWriter;
 import java.io.StringWriter;
 
-public class Alerts {
+public class AlertsUtil {
 
     public static void alertaSimples(String titulo, String msg, Alert.AlertType tipo){
         Alert alert = new Alert(tipo);

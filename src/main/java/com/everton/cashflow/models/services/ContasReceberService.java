@@ -34,10 +34,10 @@ public class ContasReceberService {
     }
 
     public boolean alterar(ContasReceber movimento, Long id) {
-       return contasReceberService.alterar(movimento, id);
+       return contasReceberClient.alterar(movimento, id);
     }
 
     public boolean deletar(Long id) {
-        return contasReceberService.deletar(id);
+        return contasReceberClient.deletar(id);
     }
 }
