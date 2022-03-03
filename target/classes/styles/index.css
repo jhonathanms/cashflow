@@ -1,0 +1,17 @@
+.principal{
+-fx-background-color: #FFF;
+}
+
+.menu-lateral{
+-fx-background-color: #535353;
+}
+
+.menu-button{
+-fx-background-color:  #535353;
+-fx-text-fill:#fff;
+}
+
+.menu-button:hover{
+-fx-background-color: #747474;
+-fx-cursor:hand;
+}

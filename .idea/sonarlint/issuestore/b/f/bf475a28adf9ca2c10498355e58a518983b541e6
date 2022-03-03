@@ -1,0 +1,17 @@
+
+
+java:S1186Š"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(¾¥ü‹ıÿÿÿÿ
+G
+java:S1602|",Remove useless curly braces around statement(Øê‚æüÿÿÿÿ
+B
+java:S1602„",Remove useless curly braces around statement(³œø?
+O
+java:S1602®",Remove useless curly braces around statement(Øê‚æüÿÿÿÿ8÷äØàô/
+I
+java:S1602Ğ",Remove useless curly braces around statement(³œø?8ÍŞÛàô/
+S
+java:S1128"6Remove this unused import 'javafx.event.EventHandler'.(º»û˜8ËÕÇàô/
+Q
+java:S1128"5Remove this unused import 'javafx.stage.WindowEvent'.(‚ƒ×r8ËÕÇàô/
+F
+java:S1068f"0Remove this unused "contaService" private field.(ª¡œı

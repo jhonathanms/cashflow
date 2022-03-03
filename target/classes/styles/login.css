@@ -1,0 +1,39 @@
+
+
+.linear-grad{
+    -fx-background-color: linear-gradient(to bottom, #4B4B4B , #595959 60%);
+}
+
+.botao-acessar{
+  -fx-background-color: #4B4B4B;
+  -fx-text-fill: #fff ;
+}
+
+.botao-acessar:hover{
+  -fx-background-color: #747474 ;
+  -fx-text-fill: #fff ;
+  -fx-cursor: pointer;
+  -fx-cursor: hand;
+}
+
+.botao-fechar{
+  -fx-background-color: #fff;
+}
+
+.botao-fechar:hover{
+  -fx-cursor: pointer;
+  -fx-background-color: #747474;
+  -fx-cursor: hand;
+}
+
+.link{
+  -fx-text-fill: #262626 ;
+}
+
+.link:hover{
+  -fx-text-fill: #262626;
+  -fx-underline: true;
+  -fx-font-weight: bold;
+  -fx-cursor: hand;
+}
+

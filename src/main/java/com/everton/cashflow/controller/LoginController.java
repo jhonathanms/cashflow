@@ -14,6 +14,8 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
+import javafx.scene.layout.StackPane;
+import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -56,6 +58,9 @@ public class LoginController implements Initializable {
     @FXML
     private AnchorPane root;
 
+    @FXML
+    private VBox vbox_login;
+
     private LoginService loginService = LoginService.getInstance();
     private IndexApplication indexApplication = IndexApplication.getInstance();
 
@@ -77,12 +82,22 @@ public class LoginController implements Initializable {
                     Alert.AlertType.WARNING);
             txtUsuario.requestFocus();
         }else{
+            txtUsuario.setDisable(true);
+            txtSenha.setDisable(true);
+            btnAcessar.setDisable(true);
             Usuario usuario = new Usuario(login, senha);
             boolean sucesso = loginService.acessar(usuario);
             if(sucesso) {
+                txtUsuario.setDisable(false);
+                txtSenha.setDisable(false);
+                btnAcessar.setDisable(false);
+
                 indexApplication.start(new Stage());
                 LoginApplication.getStage().close();
             }else{
+                txtUsuario.setDisable(false);
+                txtSenha.setDisable(false);
+                btnAcessar.setDisable(false);
                 AlertsUtil.alertaSimples(
                         "Autenticação",
                         "Ops! Login e/ou senha incorreto",
@@ -93,8 +108,6 @@ public class LoginController implements Initializable {
                 txtUsuario.requestFocus();
             }
         }
-//        indexApplication.start(new Stage());
-//        LoginApplication.getStage().close();
     }
 
     @FXML
@@ -126,12 +139,14 @@ public class LoginController implements Initializable {
         );
         new FadeOut(paneConfig).play();
         paneConfig.toBack();
+        txtUsuario.requestFocus();
     }
 
     @FXML
     private void cancelar(){
         new FadeOut(paneConfig).play();
         paneConfig.toBack();
+        txtUsuario.requestFocus();
     }
 
     @FXML
@@ -156,7 +171,6 @@ public class LoginController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        txtUsuario.requestFocus();
     }
 
 }

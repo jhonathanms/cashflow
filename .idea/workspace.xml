@@ -5,35 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="521a0dae-6c52-4c44-9437-1d97fc97d66d" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/everton/cashflow/controller/ClienteController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/everton/cashflow/controller/ContaController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/everton/cashflow/controller/ProdutoController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/everton/cashflow/main/ClienteApplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/everton/cashflow/main/ProdutoApplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/everton/cashflow/models/parsers/ProdutosSimpleProperty.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/everton/cashflow/util/TabelaUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/fxmls/cadastro-cliente.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/fxmls/cadastro-produto.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/imagens/icons/delete.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/imagens/icons/edit.svg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/configuracao.properties" beforeDir="false" afterPath="$PROJECT_DIR$/configuracao.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/everton/cashflow/controller/CadastroController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/everton/cashflow/controller/CadastroController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/everton/cashflow/controller/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/everton/cashflow/controller/LoginController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/everton/cashflow/models/clients/implementacoes/RestTemplate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/everton/cashflow/models/clients/implementacoes/RestTemplate.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/everton/cashflow/models/constantes/Constantes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/everton/cashflow/models/constantes/Constantes.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/everton/cashflow/models/parsers/ClienteSimpleProperty.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/everton/cashflow/models/parsers/ClienteSimpleProperty.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/everton/cashflow/models/services/ClienteService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/everton/cashflow/models/services/ClienteService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/everton/cashflow/models/services/ContaService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/everton/cashflow/models/services/ContaService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/everton/cashflow/models/services/ContasPagarService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/everton/cashflow/models/services/ContasPagarService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/everton/cashflow/models/services/ContasReceberService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/everton/cashflow/models/services/ContasReceberService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/everton/cashflow/models/services/MovimentoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/everton/cashflow/models/services/MovimentoService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/everton/cashflow/models/services/ProdutoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/everton/cashflow/models/services/ProdutoService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/everton/cashflow/util/Alerts.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/everton/cashflow/util/AlertsUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/everton/cashflow/util/ExtracaoDeDados.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/everton/cashflow/util/ExtracaoDeDados.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/fxmls/section-cadastro.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxmls/section-cadastro.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/styles/section-cadastro.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/styles/section-cadastro.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/everton/cashflow/main/LoginApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/everton/cashflow/main/LoginApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/fxmls/login.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxmls/login.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -250,7 +227,14 @@
       <option name="project" value="LOCAL" />
       <updated>1645855227424</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Ajustado cadastros de clientes e produtos.">
+      <created>1646254261888</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1646254261888</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -264,7 +248,8 @@
     <MESSAGE value="Implementado objetos visuais da subt-tela de cadastros." />
     <MESSAGE value="Implementado listagem de clientes." />
     <MESSAGE value="Implementado listagem de clientes e ajustado o login." />
-    <option name="LAST_COMMIT_MESSAGE" value="Implementado listagem de clientes e ajustado o login." />
+    <MESSAGE value="Ajustado cadastros de clientes e produtos." />
+    <option name="LAST_COMMIT_MESSAGE" value="Ajustado cadastros de clientes e produtos." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

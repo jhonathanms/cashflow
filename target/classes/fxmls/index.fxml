@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1080.0" styleClass="principal" stylesheets="@../styles/index.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.everton.cashflow.controller.IndexController">
+   <children>
+      <BorderPane layoutX="207.0" layoutY="235.0" prefHeight="720.0" prefWidth="1080.0" stylesheets="@../styles/index.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <left>
+            <AnchorPane prefHeight="700.0" prefWidth="188.0" styleClass="menu-lateral" stylesheets="@../styles/index.css" BorderPane.alignment="CENTER">
+               <children>
+                  <ImageView fitHeight="110.0" fitWidth="140.0" layoutX="30.0" layoutY="16.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="24.0" AnchorPane.rightAnchor="24.0" AnchorPane.topAnchor="16.0">
+                     <image>
+                        <Image url="@../imagens/logo.png" />
+                     </image>
+                  </ImageView>
+                  <VBox fx:id="grupoMenu" alignment="CENTER" layoutY="143.0" prefHeight="557.0" prefWidth="195.0" spacing="10.0">
+                     <children>
+                        <Button fx:id="btnPrincipal" contentDisplay="TOP" graphicTextGap="3.0" mnemonicParsing="false" onAction="#abrirHome" prefHeight="85.0" prefWidth="195.0" styleClass="menu-button" text="Principal" textAlignment="CENTER">
+                           <graphic>
+                              <ImageView fitHeight="27.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../imagens/icons/menu-home.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="btnMovimento" contentDisplay="TOP" graphicTextGap="3.0" layoutX="10.0" layoutY="204.0" mnemonicParsing="false" onAction="#abrirMovimento" prefHeight="85.0" prefWidth="195.0" styleClass="menu-button" text="Movimento" textAlignment="CENTER">
+                           <graphic>
+                              <ImageView fitHeight="27.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../imagens/icons/menu-venda.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="btnFinanceiro" contentDisplay="TOP" graphicTextGap="3.0" layoutX="10.0" layoutY="266.0" mnemonicParsing="false" onAction="#abrirFinanceiro" prefHeight="85.0" prefWidth="195.0" styleClass="menu-button" text="Financeiro" textAlignment="CENTER">
+                           <graphic>
+                              <ImageView fitHeight="27.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../imagens/icons/menu-financeiro.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="btnCadastro" contentDisplay="TOP" graphicTextGap="3.0" layoutX="10.0" layoutY="312.0" mnemonicParsing="false" onAction="#abrirCadastro" prefHeight="85.0" prefWidth="195.0" styleClass="menu-button" text="Cadastros" textAlignment="CENTER">
+                           <graphic>
+                              <ImageView fitHeight="27.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../imagens/icons/menu-cadastro.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Button>
+                        <Pane prefHeight="63.0" prefWidth="195.0" />
+                        <Separator maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefWidth="70.0">
+                           <VBox.margin>
+                              <Insets top="30.0" />
+                           </VBox.margin>
+                        </Separator>
+                        <Button fx:id="btnSair" graphicTextGap="10.0" mnemonicParsing="false" onAction="#sair" prefHeight="46.0" prefWidth="195.0" styleClass="menu-button" text="Sair" textAlignment="CENTER">
+                           <graphic>
+                              <ImageView fitHeight="27.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../imagens/icons/menu-exit.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </VBox>
+               </children>
+            </AnchorPane>
+         </left>
+         <center>
+            <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
+         </center>
+      </BorderPane>
+   </children>
+</AnchorPane>

@@ -1,0 +1,19 @@
+
+D
+java:S3740"/Provide the parametrized type for this generic.(ó¨æB
+E
+java:S3740"/Provide the parametrized type for this generic.(ˆš±†
+E
+java:S3740"/Provide the parametrized type for this generic.(¦öºş
+1
+java:S2326	"T is not used in the class.(…ƒÖÖ
+B
+java:S1602=",Remove useless curly braces around statement(É‘šï
+f
+java:S1192["PDefine a constant instead of duplicating this literal "Exception code " 3 times.(à½³
+e	java:S117S"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ğ©B
+k	java:S117`"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(î·˜üùÿÿÿÿ
+0
+java:S1700"Rename field "restTemplate"(ó¨æB
+\
+java:S2259Š"FA "NullPointerException" could be thrown; "response" is nullable here.(üôí

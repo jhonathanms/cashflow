@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.LineChart?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.chart.PieChart?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="885.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="885.0" spacing="5.0" style="-fx-background-color: #F5F5FA;" stylesheets="@../styles/section-home.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <VBox prefHeight="49.0" prefWidth="845.0">
+               <children>
+                  <Label prefHeight="49.0" prefWidth="216.0" text="Dashboard" textAlignment="CENTER" textFill="#757575">
+                     <font>
+                        <Font size="23.0" />
+                     </font>
+                  </Label>
+                  <Separator prefWidth="200.0" />
+               </children>
+               <VBox.margin>
+                  <Insets left="20.0" right="20.0" top="5.0" />
+               </VBox.margin>
+            </VBox>
+            <AnchorPane>
+               <children>
+                  <LineChart prefHeight="328.0" prefWidth="597.0" style="-fx-background-color: #fff;" title="Receber x Pagar" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="5.0">
+                    <xAxis>
+                      <CategoryAxis side="BOTTOM" tickLabelFill="#222222" />
+                    </xAxis>
+                    <yAxis>
+                      <NumberAxis side="TOP" tickLabelFill="#111111" />
+                    </yAxis>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </LineChart>
+               </children>
+            </AnchorPane>
+            <AnchorPane maxHeight="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="327.0" prefWidth="589.0">
+               <children>
+                  <HBox alignment="CENTER" layoutX="32.0" layoutY="13.0" spacing="30.0" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <VBox fillWidth="false" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="300.0" prefWidth="245.0" styleClass="painel">
+                           <children>
+                              <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="45.0" prefWidth="268.0" styleClass="titulo" text="Receitas x Despesas" textAlignment="CENTER" textFill="#515151">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Label>
+                              <PieChart prefHeight="249.0" prefWidth="262.0" style="-fx-background-color: #FFF;" />
+                           </children>
+                        </VBox>
+                        <VBox fillWidth="false" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="300.0" prefWidth="254.0" styleClass="painel">
+                           <children>
+                              <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="45.0" prefWidth="268.0" styleClass="titulo" text="Resumo do dia" textAlignment="CENTER" textFill="#515151">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </VBox>
+                        <VBox alignment="TOP_CENTER" fillWidth="false" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="300.0" prefWidth="283.0">
+                           <children>
+                              <AnchorPane>
+                                 <children>
+                                    <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="45.0" prefWidth="331.0" styleClass="titulo" text="Ultimos 5 Lançamentos" textAlignment="CENTER" textFill="#515151" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                       <font>
+                                          <Font size="16.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </AnchorPane>
+                              <AnchorPane>
+                                 <children>
+                                    <ListView focusTraversable="false" layoutY="12.0" prefHeight="255.0" prefWidth="283.0" style="-fx-border-color: #F4F4F4; -fx-border-width: 1px;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                                 </children>
+                              </AnchorPane>
+                           </children>
+                        </VBox>
+                     </children>
+                  </HBox>
+               </children>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+            </AnchorPane>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

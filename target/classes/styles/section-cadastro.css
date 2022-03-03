@@ -1,0 +1,59 @@
+.botao-novo-cadastro{
+ -fx-background-color: #4B4B4B;
+ -fx-text-fill: #fff;
+ -fx-border-radius: 2px;
+ -fx-pref-width: 109px;
+ -fx-pref-height: 40px;
+}
+
+.botao-exportar-pdf{
+ -fx-background-color: #fff;
+ -fx-text-fill: #4B4B4B;
+ -fx-border-color: #dedede;
+ -fx-border-radius: 2px;
+ -fx-pref-width: 109px;
+ -fx-pref-height: 40px;
+}
+
+.botao-pesquisar-pdf{
+ -fx-background-color: #fff;
+ -fx-text-fill: #4B4B4B;
+ -fx-border-color: #dedede;
+ -fx-border-radius: 2px;
+}
+
+.txt-pesquisar{
+ -fx-background-color: #fff;
+ -fx-text-fill: #4B4B4B;
+ -fx-border-color: #dedede;
+ -fx-border-radius: 2px;
+}
+
+/* remove o fundo cinza padrão do botão */
+.icon-button {
+  -fx-background-color: transparent, transparent, transparent, transparent, transparent;
+}
+
+.icon-button:hover{
+  -fx-cursor: hand;
+}
+
+/* ==== Cores para os ícones svg ==== */
+
+.icone-edit{
+  -fx-fill: #888888; /* cor cinza */
+}
+.icone-delete{
+  -fx-fill: #D00000; /* cor vermelha */
+}
+
+/* Modifica a cor do icone em svg quando o mouse */
+/* passar por cima ou quando ele for clicado */
+/* aqui eu usei tonalidades um pouco mais escuras */
+.icone-edit:pressed, .icone-edit:hover{
+  -fx-fill: #444444;
+}
+.icone-delete:pressed, .icone-delete:hover{
+  -fx-fill: #9d0208;
+}
+/* Para outras cores pode ser usado a mesma ideia */
