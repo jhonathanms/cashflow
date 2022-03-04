@@ -16,6 +16,8 @@ public class ProdutosSimpleProperty implements Serializable {
     private final SimpleStringProperty nomeProduto;
     private final SimpleDoubleProperty valorProduto;
     private final SimpleIntegerProperty estoque;
+    private String modelo = "Doc";
+    private String Natureza = "Venda/Saída";
 
     public ProdutosSimpleProperty(SimpleLongProperty id, SimpleStringProperty nomeProduto, SimpleDoubleProperty valorProduto, SimpleIntegerProperty estoque) {
         this.id = id;
@@ -77,6 +79,22 @@ public class ProdutosSimpleProperty implements Serializable {
 
     public void setEstoque(int estoque) {
         this.estoque.set(estoque);
+    }
+
+    public String getModelo() {
+        return modelo;
+    }
+
+    public void setModelo(String modelo) {
+        this.modelo = modelo;
+    }
+
+    public String getNatureza() {
+        return Natureza;
+    }
+
+    public void setNatureza(String natureza) {
+        Natureza = natureza;
     }
 
     public static ProdutosSimpleProperty converterParaSimpleProperty(Produto produto){

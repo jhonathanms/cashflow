@@ -41,10 +41,6 @@ n
 >src/main/java/com/everton/cashflow/models/enums/TipoConta.java,4\1\41ca988ade3a78ea3a10dc688e0c303bc30e0597
 N
 src/main/java/module-info.java,1\c\1c89a5491fbfda3fb050196d6a239f20200296e7
-r
-Bsrc/main/java/com/everton/cashflow/models/entidades/Movimento.java,4\3\43f14e930062857524b9180585eb369b9398e5ab
-v
-Fsrc/main/java/com/everton/cashflow/controller/MovimentoController.java,a\5\a5921e856d77484811831da66c148e21c635b8a0
 m
 =src/main/java/com/everton/cashflow/main/IndexApplication.java,3\b\3bd7c4688446575f34daea035b3b14626435f862
 r
@@ -55,10 +51,6 @@ Usrc/main/java/com/everton/cashflow/models/clients/interfaces/ContasReceberClien
 Msrc/main/java/com/everton/cashflow/models/clients/interfaces/ContaClient.java,9\8\980c757035068e2971a15a6b776bf2d09f52902d
 }
 Msrc/main/java/com/everton/cashflow/models/clients/interfaces/LoginClient.java,0\d\0dc776fadd53844184bdbc7a3541d3efff16d21c
-â
-Ysrc/main/java/com/everton/cashflow/models/clients/implementacoes/MovimentoClientImpl.java,9\1\91c7659c826596bd3b6d26bb027c36341bdf3d41
-Å
-Qsrc/main/java/com/everton/cashflow/models/clients/interfaces/MovimentoClient.java,a\4\a40a9db5c6f870e6b36fbfe0a2da75ad71182f52
 Ö
 Usrc/main/java/com/everton/cashflow/models/clients/implementacoes/ContaClientImpl.java,2\6\268813d6fe6acf92dd89c7f8c59e9666a0216300
 É
@@ -91,8 +83,6 @@ r
 Bsrc/main/java/com/everton/cashflow/controller/ContaController.java,3\a\3a9b17bf14a9734aba7ca3d50f0e46506583a19c
 |
 Lsrc/main/java/com/everton/cashflow/models/services/ContasReceberService.java,b\e\bed1dd1faa2af982eb345c10a296e019e7df75b7
-x
-Hsrc/main/java/com/everton/cashflow/models/services/MovimentoService.java,4\7\47b5b13f00be09aff417ddcc15756066ec1b96ab
 g
 7src/main/java/com/everton/cashflow/util/AlertsUtil.java,9\2\9214dd68b65f18e74c2181ff20e96b6364620484
 |
@@ -101,7 +91,5 @@ z
 Jsrc/main/java/com/everton/cashflow/models/services/ContasPagarService.java,4\4\4453628d5a4813fb35b5a31cd9d94030255a9d68
 t
 Dsrc/main/java/com/everton/cashflow/controller/ClienteController.java,b\5\b52dcee5c5e75a45a7a24c0e47a3cfa36528affe
-}
-Msrc/main/java/com/everton/cashflow/models/parsers/ProdutosSimpleProperty.java,3\8\38c7a331e543b4d62692ec072aee86acbce21160
 t
 Dsrc/main/java/com/everton/cashflow/controller/ProdutoController.java,6\b\6b172c862ee4d360bdc4ca06d4d9d2f0cece00f9

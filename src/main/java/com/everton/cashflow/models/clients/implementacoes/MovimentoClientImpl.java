@@ -4,11 +4,14 @@ import com.everton.cashflow.models.clients.interfaces.MovimentoClient;
 import com.everton.cashflow.models.constantes.Constantes;
 import com.everton.cashflow.models.dto.UsuarioDTO;
 import com.everton.cashflow.models.entidades.Movimento;
+import com.everton.cashflow.models.entidades.Produto;
 import com.everton.cashflow.util.ConversorUtil;
 import com.everton.cashflow.util.ExtracaoDeDados;
 
 import java.io.IOException;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Objects;
 
 public class MovimentoClientImpl implements MovimentoClient {
@@ -42,6 +45,8 @@ public class MovimentoClientImpl implements MovimentoClient {
         return conversorUtil.converterJsonEmEntidade(json, Movimento.class);
     }
 
+
+
     @Override
     public boolean cadastrar(Movimento movimento) {
         String json = conversorUtil.converterEntidadeEmJson(movimento);
@@ -64,4 +69,11 @@ public class MovimentoClientImpl implements MovimentoClient {
         return restTemplate.delete(urlBase.concat(Constantes.ENDPOINT_MOVIMENTO), id);
     }
 
+    @Override
+    public List<Movimento> pesquisaPorNome(String nome) {
+        Map<String, String> parametros = new HashMap<>();
+        parametros.put("nome", nome);
+        String json = restTemplate.get(urlBase.concat(Constantes.ENDPOINT_MOVIMENTO_PESQUISA), parametros);
+        return conversorUtil.converterJsonEmListaEntidade(json, Movimento.class);
+    }
 }

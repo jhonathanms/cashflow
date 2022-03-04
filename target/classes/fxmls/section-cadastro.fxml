@@ -53,7 +53,7 @@
                                                 <Cursor fx:constant="HAND" />
                                              </cursor>
                                           </Button>
-                                          <Button fx:id="btnExporportarClientes" mnemonicParsing="false" prefHeight="40.0" prefWidth="109.0" styleClass="botao-exportar-pdf" text="Exportar">
+                                          <Button fx:id="btnExporportarClientes" mnemonicParsing="false" onAction="#exportarPDF" prefHeight="40.0" prefWidth="109.0" styleClass="botao-exportar-pdf" text="Exportar">
                                              <font>
                                                 <Font size="14.0" />
                                              </font>
@@ -123,7 +123,7 @@
                                                 <Cursor fx:constant="HAND" />
                                              </cursor>
                                           </Button>
-                                          <Button fx:id="btnExporportarProdutos" mnemonicParsing="false" prefHeight="40.0" prefWidth="109.0" styleClass="botao-exportar-pdf" text="Exportar">
+                                          <Button fx:id="btnExporportarProdutos" mnemonicParsing="false" onAction="#exportarPDF" prefHeight="40.0" prefWidth="109.0" styleClass="botao-exportar-pdf" text="Exportar">
                                              <font>
                                                 <Font size="14.0" />
                                              </font>

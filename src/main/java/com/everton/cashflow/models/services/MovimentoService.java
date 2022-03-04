@@ -3,6 +3,7 @@ package com.everton.cashflow.models.services;
 import com.everton.cashflow.models.clients.implementacoes.MovimentoClientImpl;
 import com.everton.cashflow.models.clients.implementacoes.ProdutoClientImpl;
 import com.everton.cashflow.models.clients.interfaces.MovimentoClient;
+import com.everton.cashflow.models.entidades.Cliente;
 import com.everton.cashflow.models.entidades.Movimento;
 
 import java.util.List;
@@ -26,6 +27,10 @@ public class MovimentoService{
         return movimentoClient.listarTodos();
     }
 
+    public List<Movimento> pesquisaPorNome(String nome){
+        return movimentoClient.pesquisaPorNome(nome);
+    }
+
     public Movimento buscarPorId(Long id) {
         return movimentoClient.buscarPorId(id);
     }
@@ -41,4 +46,5 @@ public class MovimentoService{
     public boolean deletar(Long id) {
         return movimentoClient.deletar(id);
     }
+
 }
