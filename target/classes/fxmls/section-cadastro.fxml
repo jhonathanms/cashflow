@@ -63,12 +63,12 @@
                                           </Button>
                                           <Group>
                                              <children>
-                                                <TextField fx:id="btnPesquisarClientes" prefHeight="40.0" prefWidth="521.0" promptText="Pesquise pelo nome" styleClass="txt-pesquisar">
+                                                <TextField fx:id="txtPesquisaClientes" prefHeight="40.0" prefWidth="521.0" promptText="Pesquise pelo nome" styleClass="txt-pesquisar">
                                                    <font>
                                                       <Font size="14.0" />
                                                    </font>
                                                 </TextField>
-                                                <Button fx:id="txtPesquisaClientes" layoutX="541.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="53.0" styleClass="botao-pesquisar-pdf">
+                                                <Button fx:id="btnPesquisarClientes" layoutX="541.0" mnemonicParsing="false" onAction="#pesquisarCliente" prefHeight="40.0" prefWidth="53.0" styleClass="botao-pesquisar-pdf">
                                                    <font>
                                                       <Font size="14.0" />
                                                    </font>
@@ -138,7 +138,7 @@
                                                       <Font size="14.0" />
                                                    </font>
                                                 </TextField>
-                                                <Button fx:id="btnPesquisarProdutos" layoutX="541.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="53.0" styleClass="botao-pesquisar-pdf">
+                                                <Button fx:id="btnPesquisarProdutos" layoutX="541.0" mnemonicParsing="false" onAction="#pesquisarProduto" prefHeight="40.0" prefWidth="53.0" styleClass="botao-pesquisar-pdf">
                                                    <font>
                                                       <Font size="14.0" />
                                                    </font>

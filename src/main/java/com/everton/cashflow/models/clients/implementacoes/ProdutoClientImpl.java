@@ -3,13 +3,16 @@ package com.everton.cashflow.models.clients.implementacoes;
 import com.everton.cashflow.models.clients.interfaces.ProdutoClient;
 import com.everton.cashflow.models.constantes.Constantes;
 import com.everton.cashflow.models.dto.UsuarioDTO;
+import com.everton.cashflow.models.entidades.Cliente;
 import com.everton.cashflow.models.entidades.Movimento;
 import com.everton.cashflow.models.entidades.Produto;
 import com.everton.cashflow.util.ConversorUtil;
 import com.everton.cashflow.util.ExtracaoDeDados;
 
 import java.io.IOException;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Objects;
 
 public class ProdutoClientImpl implements ProdutoClient {
@@ -63,5 +66,13 @@ public class ProdutoClientImpl implements ProdutoClient {
     @Override
     public boolean deletar(Long id) {
         return restTemplate.delete(urlBase.concat(Constantes.ENDPOINT_PRODUTO), id);
+    }
+
+    @Override
+    public List<Produto> pesquisaPorNome(String nome) {
+        Map<String, String> parametros = new HashMap<>();
+        parametros.put("nome", nome);
+        String json = restTemplate.get(urlBase.concat(Constantes.ENDPOINT_PRODUTO_PESQUISA), parametros);
+        return conversorUtil.converterJsonEmListaEntidade(json, Produto.class);
     }
 }

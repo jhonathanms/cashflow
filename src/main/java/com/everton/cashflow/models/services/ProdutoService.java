@@ -41,4 +41,8 @@ public class ProdutoService {
     public boolean deletar(Long id) {
         return produtoClient.deletar(id);
     }
+
+    public List<Produto> pesquisaPorNome(String nome) {
+        return produtoClient.pesquisaPorNome(nome);
+    }
 }

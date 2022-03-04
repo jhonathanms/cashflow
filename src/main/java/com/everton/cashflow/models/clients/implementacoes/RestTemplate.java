@@ -73,7 +73,7 @@ public class RestTemplate<T> {
 
         try {
             response = call.execute();
-            return response.body().toString();
+            return response.body().string();
         } catch (IOException e) {
             e.printStackTrace();
             return null;

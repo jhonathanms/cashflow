@@ -25,6 +25,10 @@ public class ClienteService {
         return clienteClient.listarTodos();
     }
 
+    public List<Cliente> pesquisaPorNome(String nome){
+        return clienteClient.pesquisaPorNome(nome);
+    }
+
     public Cliente buscarPorId(Long id) {
         return clienteClient.buscarPorId(id);
     }

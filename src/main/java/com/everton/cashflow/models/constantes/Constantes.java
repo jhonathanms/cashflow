@@ -10,10 +10,12 @@ public class Constantes {
     public static final String ENDPOINT_USUARIOS_LOGAR = "/usuarios/logar";
     public static final String ENDPOINT_USUARIOS = "/usuarios";
     public static final String ENDPOINT_PRODUTO = "/produtos";
+    public static final String ENDPOINT_PRODUTO_PESQUISA = "/produtos/pesquisa";
     public static final String ENDPOINT_MOVIMENTO = "/movimentos";
     public static final String ENDPOINT_FINANCEIRO_A_RECEBER = "/receber";
     public static final String ENDPOINT_FINANCEIRO_A_PAGAR = "/pagar";
     public static final String ENDPOINT_CLIENTE = "/clientes";
+    public static final String ENDPOINT_CLIENTE_PESQUISA = "/clientes/pesquisa";
     public static final String ENDPOINT_CONTA = "/contas";
 
     /* Path das telas principais */

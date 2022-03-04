@@ -8,7 +8,9 @@ import com.everton.cashflow.util.ConversorUtil;
 import com.everton.cashflow.util.ExtracaoDeDados;
 
 import java.io.IOException;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Objects;
 
 public class ClienteClientImpl implements ClienteClient {
@@ -40,6 +42,14 @@ public class ClienteClientImpl implements ClienteClient {
     public Cliente buscarPorId(Long id) {
         String json = restTemplate.getById(urlBase.concat(Constantes.ENDPOINT_CLIENTE), id);
         return conversorUtil.converterJsonEmEntidade(json, Cliente.class);
+    }
+
+    @Override
+    public List<Cliente> pesquisaPorNome(String nome) {
+        Map<String, String> parametros = new HashMap<>();
+        parametros.put("nome", nome);
+        String json = restTemplate.get(urlBase.concat(Constantes.ENDPOINT_CLIENTE_PESQUISA), parametros);
+        return conversorUtil.converterJsonEmListaEntidade(json, Cliente.class);
     }
 
     @Override
