@@ -57,3 +57,7 @@
   -fx-fill: #9d0208;
 }
 /* Para outras cores pode ser usado a mesma ideia */
+
+.columns-table-center{
+-fx-alignment: center;
+}

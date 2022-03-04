@@ -18,7 +18,7 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="885.0" style="-fx-background-color: #fff;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.everton.cashflow.controller.MovimentoController">
    <children>
-      <VBox alignment="TOP_CENTER" focusTraversable="true" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="683.0" prefWidth="885.0" style="-fx-background-color: #fff;" stylesheets="@../styles/section-movimento.css">
+      <VBox alignment="TOP_CENTER" focusTraversable="true" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="683.0" prefWidth="885.0" style="-fx-background-color: #F5F5FA;" stylesheets="@../styles/section-movimento.css">
          <children>
             <VBox prefHeight="70.0" prefWidth="845.0">
                <children>
@@ -60,7 +60,7 @@
                                     <Font size="14.0" />
                                  </font>
                               </TextField>
-                              <Button fx:id="btnPesquisarMovimento" layoutX="541.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="53.0" styleClass="botao-pesquisar-pdf">
+                              <Button fx:id="btnPesquisarMovimento" layoutX="541.0" mnemonicParsing="false" onAction="#pesquisarMovimento" prefHeight="40.0" prefWidth="53.0" styleClass="botao-pesquisar-pdf">
                                  <font>
                                     <Font size="14.0" />
                                  </font>
@@ -81,12 +81,12 @@
                   </HBox>
                   <TableView fx:id="tbMovimento" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="499.0" prefWidth="858.0">
                      <columns>
-                        <TableColumn fx:id="colCodigo" prefWidth="63.0" resizable="false" text="Código" />
+                        <TableColumn fx:id="colCodigo" prefWidth="63.0" resizable="false" style="-fx-alignment: center; -fx-font-weight: bolder;" text="Código" />
                         <TableColumn fx:id="colPessoa" minWidth="-1.0" prefWidth="283.6666564941406" resizable="false" text="Pessoa" />
-                        <TableColumn fx:id="colModelo" maxWidth="449.0000305175781" minWidth="0.0" prefWidth="71.0" resizable="false" text="Modelo" />
-                        <TableColumn fx:id="colNatureza" maxWidth="384.6666259765625" minWidth="0.0" prefWidth="89.0" resizable="false" text="Natureza" />
-                        <TableColumn fx:id="colDataEmissao" prefWidth="134.66668701171875" resizable="false" text="Data Emissão" />
-                        <TableColumn fx:id="colValor" prefWidth="107.33331298828125" resizable="false" text="Valor" />
+                        <TableColumn fx:id="colModelo" maxWidth="449.0000305175781" minWidth="0.0" prefWidth="71.0" resizable="false" style="-fx-alignment: center;" text="Modelo" />
+                        <TableColumn fx:id="colNatureza" maxWidth="384.6666259765625" minWidth="0.0" prefWidth="89.0" resizable="false" style="-fx-alignment: center;" text="Natureza" />
+                        <TableColumn fx:id="colDataEmissao" prefWidth="134.66668701171875" resizable="false" style="-fx-alignment: center;" text="Data Emissão" />
+                        <TableColumn fx:id="colValor" prefWidth="107.33331298828125" resizable="false" style="-fx-alignment: center-right; -fx-font-weight: bolder;" text="Valor" />
                         <TableColumn fx:id="colEditMovimento" editable="false" maxWidth="60.0" minWidth="60.0" prefWidth="60.0" resizable="false" />
                         <TableColumn fx:id="colImprimirMovimento" editable="false" maxWidth="60.0" minWidth="60.0" prefWidth="60.0" resizable="false" />
                      </columns>

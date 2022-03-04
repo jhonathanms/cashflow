@@ -1,6 +1,5 @@
 package com.everton.cashflow.controller;
 
-import com.everton.cashflow.main.ClienteApplication;
 import com.everton.cashflow.main.MovimentoApplication;
 import com.everton.cashflow.models.constantes.Constantes;
 import com.everton.cashflow.models.entidades.Movimento;
@@ -16,10 +15,8 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.input.KeyCode;
-import javafx.stage.Stage;
 
 import java.net.URL;
-import java.time.LocalDate;
 import java.util.List;
 import java.util.Objects;
 import java.util.ResourceBundle;
@@ -57,7 +54,7 @@ public class MovimentoController implements Initializable {
     private TableColumn<MovimentoSimpleProperty, String> colPessoa;
 
     @FXML
-    private TableColumn<MovimentoSimpleProperty, Double> colValor;
+    private TableColumn<MovimentoSimpleProperty, String> colValor;
 
     @FXML
     private Label lblQuantidade;
@@ -95,17 +92,28 @@ public class MovimentoController implements Initializable {
         colModelo.setCellValueFactory(c -> c.getValue().modeloProperty());
         colNatureza.setCellValueFactory(c -> c.getValue().naturezaProperty());
         colDataEmissao.setCellValueFactory(c -> c.getValue().dataVendaProperty());
-        colValor.setCellValueFactory(c -> c.getValue().valorProperty().asObject());
+        colValor.setCellValueFactory(c -> c.getValue().valorProperty());
         tbMovimento.setItems(movimentos);
 
-        TabelaUtil.initButtons(colEditMovimento, 15, Constantes.CAMINHO_ICONE_EDIT, "icone-edit",
+        TabelaUtil.initButtons(
+                colEditMovimento,
+                15,
+                Constantes.CAMINHO_ICONE_EDIT,
+                "icone-edit",
                 (MovimentoSimpleProperty movimento, ActionEvent event) -> {
                     AlertsUtil.alertaSimples("Informação", "Recurso em desenvolvimento...", Alert.AlertType.INFORMATION);
                 });
 
-        TabelaUtil.initButtons(colImprimirMovimento, 15, Constantes.CAMINHO_ICONE_IMPRIMIR, "icone-imprimir", (MovimentoSimpleProperty movimento, ActionEvent event) -> {
+        TabelaUtil.initButtons(
+                colImprimirMovimento,
+                15,
+                Constantes.CAMINHO_ICONE_IMPRIMIR,
+                "icone-imprimir",
+                (MovimentoSimpleProperty movimento, ActionEvent event) -> {
             AlertsUtil.alertaSimples("Informação", "Recurso em desenvolvimento...", Alert.AlertType.INFORMATION);
         });
+        lblQuantidade.setText(String.valueOf(movimentoService.obterQuantidadeMovimentos(movimentos)));
+        lblTotal.setText(movimentoService.obterTotalMovimentos(movimentos));
     }
 
     @FXML
@@ -142,6 +150,5 @@ public class MovimentoController implements Initializable {
         fabricarColTableMovimentos(obterMovimentos());
         habilitarPesquisaPorTeclaEnter();
     }
-
 
 }

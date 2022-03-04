@@ -1,6 +1,0 @@
-
-c	java:S1004"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ªäô™
-g
-java:S1128"JRemove this unused import 'com.everton.cashflow.models.entidades.Cliente'.(ù™øá8òò™ãô/
-S
-java:S1068+"6Remove this unused "cadastroController" private field.(¢›ô8îëâàô/

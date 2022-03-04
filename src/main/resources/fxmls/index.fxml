@@ -96,7 +96,7 @@
             </AnchorPane>
          </left>
          <center>
-            <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
+            <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #F5F5FA;" BorderPane.alignment="CENTER" />
          </center>
       </BorderPane>
    </children>

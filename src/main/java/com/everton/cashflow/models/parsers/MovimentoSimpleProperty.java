@@ -3,14 +3,19 @@ package com.everton.cashflow.models.parsers;
 import com.everton.cashflow.models.entidades.Cliente;
 import com.everton.cashflow.models.entidades.Movimento;
 import com.everton.cashflow.models.entidades.Produto;
-import javafx.beans.property.*;
+import javafx.beans.property.SimpleDoubleProperty;
+import javafx.beans.property.SimpleListProperty;
+import javafx.beans.property.SimpleLongProperty;
+import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.ObservableList;
 
 import java.io.Serializable;
+import java.text.NumberFormat;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.time.LocalDate;
 import java.util.Date;
 import java.util.List;
+import java.util.Locale;
 
 public class MovimentoSimpleProperty implements Serializable {
     private static final long serialVersionUID = 1L;
@@ -22,7 +27,7 @@ public class MovimentoSimpleProperty implements Serializable {
     private SimpleStringProperty cliente;
     private SimpleStringProperty modelo;
     private SimpleStringProperty natureza;
-    private SimpleDoubleProperty valor;
+    private SimpleStringProperty valor;
 
     public MovimentoSimpleProperty() {
     }
@@ -37,18 +42,20 @@ public class MovimentoSimpleProperty implements Serializable {
         this.cliente = new SimpleStringProperty(cliente);
         this.modelo = new SimpleStringProperty("Doc");
         this.natureza = new SimpleStringProperty("Venda/Saída");
-        this.valor = new SimpleDoubleProperty(10.00);
+        this.valor = new SimpleStringProperty(
+                NumberFormat.getCurrencyInstance(new Locale("pt", "BR"))
+                        .format(10.33));
     }
 
     public double getValor() {
-        return valor.get();
+            return Double.parseDouble(valor.get().replace(",", ".").substring(3));
     }
 
-    public SimpleDoubleProperty valorProperty() {
+    public SimpleStringProperty valorProperty() {
         return valor;
     }
 
-    public void setValor(double valor) {
+    public void setValor(String valor) {
         this.valor.set(valor);
     }
 

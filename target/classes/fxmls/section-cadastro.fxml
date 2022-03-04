@@ -20,7 +20,7 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="885.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.everton.cashflow.controller.CadastroController">
    <children>
-      <VBox alignment="CENTER_LEFT" spacing="10.0" style="-fx-background-color: #fff;" stylesheets="@../styles/section-cadastro.css" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <VBox alignment="CENTER_LEFT" spacing="10.0" style="-fx-background-color: #F5F5FA;" stylesheets="@../styles/section-cadastro.css" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
             <VBox prefHeight="49.0" prefWidth="845.0">
                <children>
@@ -89,14 +89,11 @@
                                     </HBox>
                                     <TableView fx:id="tbClientes" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="299.0" prefWidth="858.0">
                                        <columns>
-                                          <TableColumn fx:id="colCodClientes" prefWidth="75.0" resizable="false" text="Código" />
-                                          <TableColumn fx:id="colNomeClientes" minWidth="-1.0" prefWidth="660.9999923706055" resizable="false" text="Nome" />
+                                          <TableColumn fx:id="colCodClientes" prefWidth="75.0" resizable="false" style="-fx-alignment: center; -fx-font-weight: bolder; -fx-font-size: 14px;" text="Código" />
+                                          <TableColumn fx:id="colNomeClientes" minWidth="-1.0" prefWidth="660.9999923706055" resizable="false" style="-fx-font-size: 14px; -fx-alignment: center-left;" text="Nome" />
                                           <TableColumn fx:id="colBtnEditarCliente" maxWidth="60.0" minWidth="0.0" prefWidth="0.0" />
                                           <TableColumn fx:id="colBtnDeleteCliente" maxWidth="60.0" minWidth="60.0" prefWidth="60.0" />
                                        </columns>
-                                       <columnResizePolicy>
-                                          <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
-                                       </columnResizePolicy>
                                     </TableView>
                                  </children>
                               </VBox>
@@ -159,16 +156,13 @@
                                     </HBox>
                                     <TableView fx:id="tbProdutos" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="299.0" prefWidth="858.0">
                                        <columns>
-                                          <TableColumn fx:id="colCodProdutos" prefWidth="75.0" resizable="false" text="Código" />
-                                          <TableColumn fx:id="colDescricaoodutos" minWidth="-1.0" prefWidth="461.99999237060547" resizable="false" text="Descrição" />
-                                          <TableColumn fx:id="colEstoqueProdutos" minWidth="-1.0" prefWidth="81.33331298828125" resizable="false" text="Estoque" />
-                                          <TableColumn fx:id="colValorProdutos" minWidth="-1.0" prefWidth="121.66668701171875" resizable="false" text="Valor" />
+                                          <TableColumn fx:id="colCodProdutos" prefWidth="75.0" resizable="false" style="-fx-alignment: center; -fx-font-weight: bolder; -fx-font-size: 14px;" text="Código" />
+                                          <TableColumn fx:id="colDescricaoodutos" minWidth="-1.0" prefWidth="461.99999237060547" resizable="false" style="-fx-font-size: 14px; -fx-alignment: center-left;" text="Descrição" />
+                                          <TableColumn fx:id="colEstoqueProdutos" minWidth="-1.0" prefWidth="81.33331298828125" resizable="false" style="-fx-font-size: 14px; -fx-alignment: center-left;" text="Estoque" />
+                                          <TableColumn fx:id="colValorProdutos" minWidth="-1.0" prefWidth="121.66668701171875" resizable="false" style="-fx-alignment: center-right; -fx-font-weight: bolder; -fx-font-size: 14px;" text="Valor" />
                                           <TableColumn fx:id="colBtnEditarProdutos" maxWidth="60.0" minWidth="60.0" prefWidth="60.0" />
                                           <TableColumn fx:id="colBtnDeleteProdutos" maxWidth="60.0" minWidth="60.0" prefWidth="60.0" />
                                        </columns>
-                                       <columnResizePolicy>
-                                          <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
-                                       </columnResizePolicy>
                                     </TableView>
                                  </children>
                               </VBox>

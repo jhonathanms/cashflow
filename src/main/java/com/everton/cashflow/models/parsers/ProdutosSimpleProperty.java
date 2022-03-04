@@ -7,6 +7,9 @@ import javafx.beans.property.SimpleLongProperty;
 import javafx.beans.property.SimpleStringProperty;
 
 import java.io.Serializable;
+import java.text.NumberFormat;
+import java.text.ParseException;
+import java.util.Locale;
 
 
 public class ProdutosSimpleProperty implements Serializable {
@@ -14,7 +17,7 @@ public class ProdutosSimpleProperty implements Serializable {
 
     private final SimpleLongProperty id;
     private final SimpleStringProperty nomeProduto;
-    private final SimpleDoubleProperty valorProduto;
+    private final SimpleStringProperty valorProduto;
     private final SimpleIntegerProperty estoque;
     private String modelo = "Doc";
     private String Natureza = "Venda/Saída";
@@ -22,14 +25,18 @@ public class ProdutosSimpleProperty implements Serializable {
     public ProdutosSimpleProperty(SimpleLongProperty id, SimpleStringProperty nomeProduto, SimpleDoubleProperty valorProduto, SimpleIntegerProperty estoque) {
         this.id = id;
         this.nomeProduto = nomeProduto;
-        this.valorProduto = valorProduto;
+        this.valorProduto = new SimpleStringProperty(
+                NumberFormat.getCurrencyInstance(new Locale("pt", "BR"))
+                        .format(valorProduto.get()));
         this.estoque = estoque;
     }
 
     public ProdutosSimpleProperty(Long id, String nomeProduto, Double valorProduto, Integer estoque) {
         this.id = new SimpleLongProperty(id);
         this.nomeProduto = new SimpleStringProperty(nomeProduto);
-        this.valorProduto = new SimpleDoubleProperty(valorProduto);
+        this.valorProduto = new SimpleStringProperty(
+                NumberFormat.getCurrencyInstance(new Locale("pt", "BR"))
+                        .format(valorProduto));
         this.estoque = new SimpleIntegerProperty(estoque);
     }
 
@@ -57,15 +64,15 @@ public class ProdutosSimpleProperty implements Serializable {
         this.nomeProduto.set(nomeProduto);
     }
 
-    public double getValorProduto() {
+    public String getValorProduto() {
         return valorProduto.get();
     }
 
-    public SimpleDoubleProperty valorProdutoProperty() {
+    public SimpleStringProperty valorProdutoProperty() {
         return valorProduto;
     }
 
-    public void setValorProduto(double valorProduto) {
+    public void setValorProduto(String valorProduto) {
         this.valorProduto.set(valorProduto);
     }
 
@@ -107,12 +114,18 @@ public class ProdutosSimpleProperty implements Serializable {
     }
 
     public static Produto converterParaEntidade(ProdutosSimpleProperty produto){
-        return new Produto(
-                produto.getId(),
-                produto.getNomeProduto(),
-                produto.getValorProduto(),
-                produto.getEstoque(),
-                null
-        );
+        try {
+            return new Produto(
+                    produto.getId(),
+                    produto.getNomeProduto(),
+                    (Double) NumberFormat.getCurrencyInstance(new Locale(Locale.US.getLanguage(), Locale.US.getCountry()))
+                            .parse(produto.getValorProduto()),
+                    produto.getEstoque(),
+                    null
+            );
+        } catch (ParseException e) {
+            e.printStackTrace();
+            return null;
+        }
     }
 }

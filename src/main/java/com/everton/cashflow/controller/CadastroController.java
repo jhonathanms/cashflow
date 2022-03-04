@@ -82,7 +82,7 @@ public class CadastroController implements Initializable {
     @FXML
     protected TableColumn<ProdutosSimpleProperty, Integer> colEstoqueProdutos;
     @FXML
-    protected TableColumn<ProdutosSimpleProperty, Double> colValorProdutos;
+    protected TableColumn<ProdutosSimpleProperty, String> colValorProdutos;
     @FXML
     protected TableColumn<ProdutosSimpleProperty, ProdutosSimpleProperty> colBtnDeleteProdutos;
     @FXML
@@ -197,7 +197,7 @@ public class CadastroController implements Initializable {
         colCodProdutos.setCellValueFactory(c -> c.getValue().idProperty().asObject());
         colDescricaoodutos.setCellValueFactory(p -> p.getValue().nomeProdutoProperty());
         colEstoqueProdutos.setCellValueFactory(p -> p.getValue().estoqueProperty().asObject());
-        colValorProdutos.setCellValueFactory(p -> p.getValue().valorProdutoProperty().asObject());
+        colValorProdutos.setCellValueFactory(p -> p.getValue().valorProdutoProperty());
         tbProdutos.setItems(produtos);
 
         TabelaUtil.initButtons(
@@ -209,9 +209,8 @@ public class CadastroController implements Initializable {
                     produtoApplication.abrirTelaAlterarProduto(new Stage(),
                             ProdutosSimpleProperty.converterParaEntidade(produto));
 
-                    ProdutoApplication.getStage().setOnCloseRequest(we -> {
-                        fabricarColTableProdutos(obterProdutos());
-                    });
+                    ProdutoApplication.getStage().setOnCloseRequest(we ->
+                            fabricarColTableProdutos(obterProdutos()));
                 });
 
         TabelaUtil.initButtons(

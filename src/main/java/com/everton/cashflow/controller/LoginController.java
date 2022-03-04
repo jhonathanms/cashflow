@@ -9,9 +9,11 @@ import com.everton.cashflow.models.entidades.Usuario;
 import com.everton.cashflow.models.services.LoginService;
 import com.everton.cashflow.util.AlertsUtil;
 import com.everton.cashflow.util.ExtracaoDeDados;
+import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
+import javafx.scene.input.KeyCode;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.StackPane;
@@ -171,7 +173,10 @@ public class LoginController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        Platform.runLater(() -> txtUsuario.requestFocus());
+        txtSenha.setOnKeyPressed(keyEvent -> {
+            if(keyEvent.getCode().equals(KeyCode.ENTER)) acessar();
+        });
     }
-
 }
 

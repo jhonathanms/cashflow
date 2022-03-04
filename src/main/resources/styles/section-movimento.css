@@ -44,7 +44,7 @@
   -fx-fill: #888888; /* cor cinza */
 }
 .icone-imprimir{
-  -fx-fill: #D00000; /* cor vermelha */
+  -fx-fill: #09244B; /* cor vermelha */
 }
 
 /* Modifica a cor do icone em svg quando o mouse */
@@ -54,6 +54,6 @@
   -fx-fill: #444444;
 }
 .icone-imprimir:pressed, .icone-imprimir:hover{
-  -fx-fill: #9d0208;
+  -fx-fill: #001B94;
 }
 /* Para outras cores pode ser usado a mesma ideia */
