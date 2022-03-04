@@ -1,4 +1,6 @@
-package com.everton.cashflow.models.entidades;
+package com.everton.cashflow.models.dto;
+
+import com.everton.cashflow.models.entidades.Usuario;
 
 import java.io.Serializable;
 

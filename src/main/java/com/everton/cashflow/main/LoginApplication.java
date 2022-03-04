@@ -53,16 +53,16 @@ public class LoginApplication extends Application {
         stage.setScene(scene);
         stage.setMaximized(false);
         stage.getIcons().add(new Image(LoginApplication.class.getResource(Constantes.URL_LOGO_ICON).toString()));
-        carregarPainelPrincipal(root);
         stage.show();
+//        carregarPainelPrincipal(root);
 
     }
 
-    private static void carregarPainelPrincipal(Parent root) {
-        BorderPane borderPane = (BorderPane) root.getChildrenUnmodifiable().get(0) ;//BorderPane
-        StackPane stackPane = (StackPane) borderPane.getChildren().get(1);
-        Pane pane = (Pane) stackPane.getChildren().get(1);
-        if (pane.getId().equals("paneConfig"))
-            pane.toBack();
-    }
+//    private static void carregarPainelPrincipal(Parent root) {
+////        BorderPane borderPane = (BorderPane) root.getChildrenUnmodifiable().get(0) ;//BorderPane
+////        StackPane stackPane = (StackPane) borderPane.getChildren().get(1);
+//////        Pane pane = (Pane) stackPane.getChildren().get(1);
+//////        if (pane.getId().equals("paneConfig"))
+////            pane.toBack();
+//    }
 }
