@@ -44,5 +44,8 @@ public class Cliente implements Serializable {
         this.movimento = movimento;
     }
 
-
+    @Override
+    public String toString() {
+        return nomeCliente;
+    }
 }

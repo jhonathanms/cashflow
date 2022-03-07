@@ -50,7 +50,7 @@
          <children>
             <VBox prefHeight="49.0" prefWidth="845.0">
                <children>
-                  <Label prefHeight="49.0" prefWidth="216.0" text="Novo Cliente" textAlignment="CENTER" textFill="#757575">
+                  <Label fx:id="lblTituloCadastroCliente" prefHeight="49.0" prefWidth="216.0" text="Novo Cliente" textAlignment="CENTER" textFill="#757575">
                      <font>
                         <Font size="23.0" />
                      </font>

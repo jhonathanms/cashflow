@@ -1,0 +1,16 @@
+
+L
+java:S2696&"6Make the enclosing method "static" or remove this set.(©µ£Ê
+K
+java:S2209&"5Change this instance-reference to a static reference.(©µ£Ê
+M
+java:S11722"+Remove this unused method parameter "root".(¯øÿïûÿÿÿÿ8®çŸêô/
+]	java:S1259"<This block of commented-out lines of code should be removed.(ÃˆªŒùÿÿÿÿ8³çŸêô/
+]	java:S125="<This block of commented-out lines of code should be removed.(ÜŞ§¶úÿÿÿÿ8ŞÕŸêô/
+]
+java:S1128
+";Remove this unused import 'javafx.scene.layout.BorderPane'.(Îî¥üÿÿÿÿ8´çŸêô/
+W
+java:S1128"5Remove this unused import 'javafx.scene.layout.Pane'.(êÄƒÄşÿÿÿÿ8µçŸêô/
+W
+java:S1128":Remove this unused import 'javafx.scene.layout.StackPane'.(™÷èò8¶çŸêô/

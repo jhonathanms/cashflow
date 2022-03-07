@@ -10,6 +10,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import javafx.stage.WindowEvent;
@@ -23,6 +24,7 @@ public class ClienteController implements Initializable {
     @FXML private Button btnSalvarCliente;
     @FXML private TextField txtCodCliente;
     @FXML private TextField txtNomeCliente;
+    @FXML private Label lblTituloCadastroCliente;
 
     private ClienteService clienteService = ClienteService.getInstance();
     private ClienteApplication clienteApplication = ClienteApplication.getInstance();
@@ -79,11 +81,12 @@ public class ClienteController implements Initializable {
         if (Objects.nonNull(cliente)){
             txtCodCliente.setText(String.valueOf(cliente.getId()));
             txtNomeCliente.setText(cliente.getNomeCliente());
-            txtNomeCliente.selectEnd();
+            lblTituloCadastroCliente.setText("Alterar cliente");
             txtNomeCliente.requestFocus();
         }else{
             txtCodCliente.setText("");
             txtNomeCliente.setText("");
+            lblTituloCadastroCliente.setText("Novo cliente");
             txtNomeCliente.requestFocus();
         }
     }

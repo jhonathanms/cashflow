@@ -1,7 +1,6 @@
 package com.everton.cashflow.controller;
 
 import com.everton.cashflow.main.ProdutoApplication;
-import com.everton.cashflow.models.entidades.Cliente;
 import com.everton.cashflow.models.entidades.Produto;
 import com.everton.cashflow.models.services.ProdutoService;
 import com.everton.cashflow.util.AlertsUtil;
@@ -10,6 +9,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import javafx.stage.WindowEvent;
@@ -38,36 +38,38 @@ public class ProdutoController implements Initializable {
     @FXML
     private TextField txtValorProduto;
 
-    private  ProdutoService produtoService = ProdutoService.getInstance();
-    private  ProdutoApplication produtoApplication = ProdutoApplication.getInstance();
+    @FXML
+    private Label lblTituloCadastroProduto;
+
+    private ProdutoService produtoService = ProdutoService.getInstance();
+    private ProdutoApplication produtoApplication = ProdutoApplication.getInstance();
     private CadastroController cadastroController = CadastroController.getInstance();
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        exibirDadosDeCliente();
+        exibirDadosDeProdutos();
         txtDescricaoProduto.requestFocus();
     }
 
     @FXML
-    private void SalvarOuAtualizar(){
+    private void SalvarOuAtualizar() {
         Produto produto = produtoApplication.getProduto();
-        if (Objects.isNull(produto)){
+        if (Objects.isNull(produto)) {
             cadastrarProduto();
-        }else{
+        } else {
             alterarProduto();
         }
     }
 
-    private void cadastrarProduto(){
+    private void cadastrarProduto() {
         String descricao = ExtracaoDeDados.textFieldToString(txtDescricaoProduto);
         int qtEstoque = ExtracaoDeDados.textFieldToInt(txtQtProduto);
         double valorVenda = ExtracaoDeDados.textFieldToDouble(txtValorProduto);
         Produto produto = new Produto(null, descricao, valorVenda, qtEstoque, null);
-
         boolean sucesso = produtoService.cadastrar(produto);
-        if(sucesso){
+        if (sucesso) {
             fecherEAtualizarTabela();
-        }else {
+        } else {
             AlertsUtil.alertaSimples(
                     "Erro de gravação",
                     "Não foi possivel fazer a inclusão do produto.",
@@ -76,17 +78,17 @@ public class ProdutoController implements Initializable {
         }
     }
 
-    private void alterarProduto(){
+    private void alterarProduto() {
         String descricao = ExtracaoDeDados.textFieldToString(txtDescricaoProduto);
         int qtEstoque = ExtracaoDeDados.textFieldToInt(txtQtProduto);
         double valorVenda = ExtracaoDeDados.textFieldToDouble(txtValorProduto);
         Long id = ExtracaoDeDados.textFieldToLong(txtCodProduto);
-        Produto produto = new Produto(null, descricao,valorVenda, qtEstoque, null);
+        Produto produto = new Produto(null, descricao, valorVenda, qtEstoque, null);
 
         boolean sucesso = produtoService.alterar(produto, id);
-        if(sucesso){
+        if (sucesso) {
             fecherEAtualizarTabela();
-        }else {
+        } else {
             AlertsUtil.alertaSimples(
                     "Erro de alteração",
                     "Não foi possivel fazer a alteração do produto.",
@@ -95,26 +97,33 @@ public class ProdutoController implements Initializable {
         }
     }
 
-    private void exibirDadosDeCliente(){
+    private void exibirDadosDeProdutos() {
         Produto produto = produtoApplication.getProduto();
-        if (Objects.nonNull(produto)){
+        if (Objects.nonNull(produto)) {
             txtCodProduto.setText(String.valueOf(produto.getId()));
             txtDescricaoProduto.setText(produto.getNomeProduto());
             txtQtProduto.setText(String.valueOf(produto.getEstoque()));
             txtValorProduto.setText(String.valueOf(produto.getValorProduto()));
-            txtDescricaoProduto.selectEndOfNextWord();
+            lblTituloCadastroProduto.setText("Editar produto");
+            txtDescricaoProduto.requestFocus();
+        } else {
+            txtCodProduto.setText("");
+            txtDescricaoProduto.setText("");
+            txtQtProduto.setText("");
+            txtValorProduto.setText("");
+            lblTituloCadastroProduto.setText("Novo produto");
             txtDescricaoProduto.requestFocus();
         }
     }
 
-    private void fecherEAtualizarTabela(){
-    Stage stage = (Stage) btnSalvarProduto.getScene().getWindow();
+    private void fecherEAtualizarTabela() {
+        Stage stage = (Stage) btnSalvarProduto.getScene().getWindow();
         stage.getOnCloseRequest().handle(new WindowEvent(stage, WindowEvent.WINDOW_CLOSE_REQUEST));
         fecharCadastroProduto();
     }
 
     @FXML
-    private void fecharCadastroProduto(){
+    private void fecharCadastroProduto() {
         ProdutoApplication.getStage().close();
     }
 

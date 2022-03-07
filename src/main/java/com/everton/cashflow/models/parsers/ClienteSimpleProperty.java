@@ -55,4 +55,9 @@ public class ClienteSimpleProperty implements Serializable {
         return new Cliente(clienteSimpleProperty.getId(), clienteSimpleProperty.getNomeCliente(), null);
     }
 
+    @Override
+    public String toString() {
+        return getNomeCliente();
+    }
+
 }

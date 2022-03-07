@@ -62,4 +62,9 @@ public class Produto implements Serializable {
     public void setMovimento(Movimento movimento) {
         this.movimento = movimento;
     }
+
+    @Override
+    public String toString() {
+        return nomeProduto;
+    }
 }

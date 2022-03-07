@@ -1,10 +1,14 @@
 package com.everton.cashflow.controller;
 
 import com.everton.cashflow.main.MovimentoApplication;
+import com.everton.cashflow.main.MovimentoCadastroApplication;
+import com.everton.cashflow.main.ProdutoApplication;
 import com.everton.cashflow.models.constantes.Constantes;
 import com.everton.cashflow.models.entidades.Movimento;
 import com.everton.cashflow.models.parsers.MovimentoSimpleProperty;
+import com.everton.cashflow.models.services.ContaService;
 import com.everton.cashflow.models.services.MovimentoService;
+import com.everton.cashflow.models.services.ProdutoService;
 import com.everton.cashflow.util.AlertsUtil;
 import com.everton.cashflow.util.ExtracaoDeDados;
 import com.everton.cashflow.util.TabelaUtil;
@@ -15,6 +19,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.input.KeyCode;
+import javafx.stage.Stage;
 
 import java.net.URL;
 import java.util.List;
@@ -70,10 +75,25 @@ public class MovimentoController implements Initializable {
 
     private MovimentoService movimentoService = MovimentoService.getInstance();
     private MovimentoApplication movimentoApplication = MovimentoApplication.getInstance();
+    private MovimentoCadastroApplication movimentoCadastroApplication = MovimentoCadastroApplication.getInstance();
+    private MovimentoCadastroController movimentoCadastroController = MovimentoCadastroController.getInstance();
+    private ProdutoService produtoService = ProdutoService.getInstance();
+    private ContaService contaService = ContaService.getInstance();
+
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        txtPesquisaMovimento.requestFocus();
+        fabricarColTableMovimentos(obterMovimentos());
+        habilitarPesquisaPorTeclaEnter();
+    }
 
     @FXML
     void abrirCadastroMovimento(ActionEvent event) {
-        AlertsUtil.alertaSimples("Informação", "Recurso em desenvolvimento...", Alert.AlertType.INFORMATION);
+        movimentoCadastroApplication.abrirTelaAlterarMovimento(new Stage(), null);
+        MovimentoCadastroApplication.getStage().setOnCloseRequest(we -> {
+            fabricarColTableMovimentos(obterMovimentos());
+        });
+
     }
 
     @FXML
@@ -142,13 +162,6 @@ public class MovimentoController implements Initializable {
     @FXML
     private void exportarPDF() {
         AlertsUtil.alertaSimples("Informação", "Em desenvolvimento...", Alert.AlertType.INFORMATION);
-    }
-
-    @Override
-    public void initialize(URL url, ResourceBundle resourceBundle) {
-        txtPesquisaMovimento.requestFocus();
-        fabricarColTableMovimentos(obterMovimentos());
-        habilitarPesquisaPorTeclaEnter();
     }
 
 }

@@ -1,5 +1,11 @@
 package com.everton.cashflow.models.entidades;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import com.fasterxml.jackson.datatype.jsr310.deser.LocalDateTimeDeserializer;
+import com.fasterxml.jackson.datatype.jsr310.ser.LocalDateTimeSerializer;
+
 import java.io.Serializable;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
@@ -12,6 +18,7 @@ public class Movimento implements Serializable {
 
     private Long id;
     private Double quantidadeProduto;
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm")
     private Date dataVenda;
     private List<Produto> produtos = new ArrayList<>();
     private Cliente clientes;
@@ -44,7 +51,7 @@ public class Movimento implements Serializable {
     }
 
     public String getDataVenda() {
-        return new SimpleDateFormat("dd-MM-yyyy").format(dataVenda);
+        return new SimpleDateFormat("yyyy-MM-dd HH:mm").format(dataVenda);
     }
 
     public void setDataVenda(Date dataVenda) {

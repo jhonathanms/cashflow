@@ -22,6 +22,7 @@ public class ProdutosSimpleProperty implements Serializable {
     private String modelo = "Doc";
     private String Natureza = "Venda/Saída";
 
+
     public ProdutosSimpleProperty(SimpleLongProperty id, SimpleStringProperty nomeProduto, SimpleDoubleProperty valorProduto, SimpleIntegerProperty estoque) {
         this.id = id;
         this.nomeProduto = nomeProduto;
@@ -40,6 +41,14 @@ public class ProdutosSimpleProperty implements Serializable {
         this.estoque = new SimpleIntegerProperty(estoque);
     }
 
+    public ProdutosSimpleProperty() {
+        this.id = null;
+        this.nomeProduto = null;
+        this.valorProduto = null;
+        this.estoque = null;
+    }
+
+
     public long getId() {
         return id.get();
     }
@@ -54,6 +63,12 @@ public class ProdutosSimpleProperty implements Serializable {
 
     public String getNomeProduto() {
         return nomeProduto.get();
+    }
+
+    public String getValorProdutoSemMascara() {
+        return getValorProduto()
+                .replace(",", ".")
+                .substring(3);
     }
 
     public SimpleStringProperty nomeProdutoProperty() {
@@ -104,7 +119,7 @@ public class ProdutosSimpleProperty implements Serializable {
         Natureza = natureza;
     }
 
-    public static ProdutosSimpleProperty converterParaSimpleProperty(Produto produto){
+    public static ProdutosSimpleProperty converterParaSimpleProperty(Produto produto) {
         return new ProdutosSimpleProperty(
                 produto.getId(),
                 produto.getNomeProduto(),
@@ -113,19 +128,22 @@ public class ProdutosSimpleProperty implements Serializable {
         );
     }
 
-    public static Produto converterParaEntidade(ProdutosSimpleProperty produto){
-        try {
+    public static Produto converterParaEntidade(ProdutosSimpleProperty produto) {
             return new Produto(
                     produto.getId(),
                     produto.getNomeProduto(),
-                    (Double) NumberFormat.getCurrencyInstance(new Locale(Locale.US.getLanguage(), Locale.US.getCountry()))
-                            .parse(produto.getValorProduto()),
+                    Double.parseDouble(produto.getValorProduto()
+                            .replace(",", ".")
+                            .substring(3)
+                    ),
                     produto.getEstoque(),
                     null
             );
-        } catch (ParseException e) {
-            e.printStackTrace();
-            return null;
-        }
     }
+
+    @Override
+    public String toString() {
+        return getNomeProduto();
+    }
+
 }
